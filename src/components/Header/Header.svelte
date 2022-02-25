@@ -1,18 +1,18 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 
-	let midday = "";
-	let hour: number;
-	let min = "";
-	let day = "";
-	let month: number;
-	let date: number;
+	let midday = "",
+		hour = 0,
+		min = "",
+		day = "",
+		month = 0,
+		date = 0;
 
 	const setTime = () => {
-		const dayList = ["일", "월", "화", "수", "목", "금", "토"];
-		const dateObj = new Date();
-		const tempHour = dateObj.getHours();
-		const tempMin = dateObj.getMinutes();
+		const dayList = ["일", "월", "화", "수", "목", "금", "토"],
+			dateObj = new Date(),
+			tempHour = dateObj.getHours(),
+			tempMin = dateObj.getMinutes();
 
 		month = dateObj.getMonth() + 1;
 		date = dateObj.getDate();
@@ -32,36 +32,11 @@
 	<div class="left"></div>
 
 	<div class="right">
-		<div class="time">{month}월 {date}일 ({day}) {midday} {hour}:{min}</div>
+		<div class="time">
+			٩(◕‿◕｡)۶ {month}월 {date}일 ({day}) {midday}
+			{hour}:{min}
+		</div>
 	</div>
 </div>
 
-<style lang="scss">
-	.container {
-		z-index: 999999999999999;
-		position: absolute;
-		background: #00000030;
-		-webkit-backdrop-filter: blur(10px);
-		backdrop-filter: blur(10px);
-		width: 100%;
-		height: 23px;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		color: white;
-	}
-
-	.left {
-		padding-left: 15px;
-	}
-
-	.right {
-		display: flex;
-		align-items: center;
-		font-weight: 400;
-		padding-right: 15px;
-		.time {
-			font-size: 0.9rem;
-		}
-	}
-</style>
+<style src="./Header.scss"></style>

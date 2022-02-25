@@ -74,7 +74,26 @@ export default {
 					.then((result) => result.css),
 		}),
 		alias({
-			entries: [{ find: "@", replacement: path.resolve(__dirname, "src") }],
+			entries: [
+				{ find: "~", replacement: path.resolve(__dirname, "src") },
+				{ find: "@pages", replacement: path.resolve(__dirname, "src/pages") },
+				{
+					find: "@components",
+					replacement: path.resolve(__dirname, "src/components"),
+				},
+				{ find: "@apis", replacement: path.resolve(__dirname, "src/apis") },
+				{ find: "@assets", replacement: path.resolve(__dirname, "src/assets") },
+				{
+					find: "@interfaces",
+					replacement: path.resolve(__dirname, "src/interfaces"),
+				},
+				{ find: "@routes", replacement: path.resolve(__dirname, "src/routes") },
+				{ find: "@utils", replacement: path.resolve(__dirname, "src/utils") },
+				{
+					find: "@constants",
+					replacement: path.resolve(__dirname, "src/constants"),
+				},
+			],
 		}),
 
 		// In dev mode, call `npm run start` once

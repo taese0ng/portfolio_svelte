@@ -3,5 +3,4 @@
 
 <div>test</div>
 
-<style lang="scss">
-</style>
+<style src="./Price.scss"></style>

@@ -1,0 +1,62 @@
+.container {
+	position: absolute;
+	bottom: 4px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.menu {
+	background: $white_70per;
+	-webkit-backdrop-filter: blur(30px);
+	backdrop-filter: blur(30px);
+	border: 1px solid $white_40per;
+	display: flex;
+	padding: 8px 5px 14px 5px;
+	border-radius: 20px;
+}
+
+.menu__item {
+	width: 50px;
+	height: 50px;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 6px;
+	cursor: pointer;
+	background-color: var(--bgColor);
+	background-image: var(--icon);
+	background-size: 100%;
+
+	& > &__dot {
+		position: absolute;
+		width: 4px;
+		height: 4px;
+		border-radius: 100%;
+		background: $darkBlue_10;
+		bottom: -10px;
+	}
+}
+
+.bounce {
+	position: relative;
+	animation: bounce 0.6s linear;
+}
+
+/* 바운스의 높이 0% 일 때, 0px 50%일 때, -5px 70%일 때, -50px 100%일 때, 0px */
+
+@keyframes bounce {
+	0% {
+		top: 0;
+	}
+
+	50% {
+		top: -20px;
+	}
+
+	100% {
+		top: 0;
+	}
+}
