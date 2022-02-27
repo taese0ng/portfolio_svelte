@@ -3,25 +3,29 @@
 	import type { DockItemType } from "@interfaces/dock";
 
 	export let itemList: Array<DockItemType>;
-	export let onOpen: (id: number) => void;
-	export let onUpper: (id: number) => void;
+	export let onOpenModal: (id: string) => void;
+	export let onUpperModal: (id: string) => void;
 
-	const onClickMenu = (e: any, item: DockItemType) => {
+	const onClickMenu = (
+		e: MouseEvent & { currentTarget: EventTarget & HTMLDivElement },
+		item: DockItemType,
+	) => {
 		e.preventDefault();
 		if (!item.isOpen) {
-			e.target.classList.remove("bounce"); // reset animation
-			void e.target.offsetWidth; // trigger reflow
-			e.target.classList.add("bounce"); // start animation
+			e.currentTarget.classList.remove("bounce"); // reset animation
+			void e.currentTarget.offsetWidth; // trigger reflow
+			e.currentTarget.classList.add("bounce"); // start animation
 			setTimeout(() => {
-				onOpen(item.id);
+				onOpenModal(item.id);
 			}, 900);
 		} else {
-			onUpper(item.id);
+			onUpperModal(item.id);
 		}
 	};
 
 	onMount(() => {
-		const elements = document.getElementsByClassName("menu__item");
+		const elements = document.getElementsByClassName("menu__item__icon");
+
 		for (let i = 0; i < elements.length; i++) {
 			elements[i].classList.remove("bounce");
 		}
@@ -31,14 +35,16 @@
 <div class="container">
 	<div class="menu">
 		{#each itemList as item}
-			<div
-				class="menu__item bounce"
-				on:click="{(e) => onClickMenu(e, item)}"
-				style="--icon:{`url(${item.icon})`}; --bgColor:{item.icon
-					? 'transparent'
-					: 'red'};"
-			>
-				{item.icon !== "" ? "" : item.title}
+			<div class="menu__item">
+				<div
+					class="menu__item__icon bounce"
+					style="
+					--icon:{`url(${item.icon})`}; 
+					--bgColor:{item.icon ? 'transparent' : 'red'};
+					"
+					on:click="{(e) => onClickMenu(e, item)}"
+				></div>
+
 				{#if item.isOpen}
 					<div class="menu__item__dot"></div>
 				{/if}

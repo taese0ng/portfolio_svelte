@@ -3,7 +3,7 @@ import { Info, Price } from "@components/Modals";
 
 export const itemList: Array<DockItemType> = [
 	{
-		id: 0,
+		id: "myInfo",
 		title: "내 정보",
 		isOpen: false,
 		icon: "/images/myInfo.png",
@@ -11,7 +11,7 @@ export const itemList: Array<DockItemType> = [
 		zIndex: 0,
 	},
 	{
-		id: 1,
+		id: "price",
 		title: "수상경력",
 		isOpen: false,
 		icon: "/images/price.png",
@@ -21,15 +21,11 @@ export const itemList: Array<DockItemType> = [
 		height: 500,
 	},
 	{
-		id: 2,
+		id: "finder",
 		title: "2",
 		isOpen: false,
 		icon: "/images/finder.png",
 		component: Info,
 		zIndex: 0,
 	},
-	{ id: 3, title: "3", isOpen: false, icon: "", component: Info, zIndex: 0 },
-	{ id: 4, title: "4", isOpen: false, icon: "", component: Info, zIndex: 0 },
-	{ id: 5, title: "5", isOpen: false, icon: "", component: Info, zIndex: 0 },
-	{ id: 6, title: "6", isOpen: false, icon: "", component: Info, zIndex: 0 },
 ];

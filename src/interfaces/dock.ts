@@ -1,7 +1,7 @@
 import type { SvelteComponent } from "svelte";
 
 export interface DockItemType {
-	id: number;
+	id: string;
 	title: string;
 	isOpen: boolean;
 	icon: string;

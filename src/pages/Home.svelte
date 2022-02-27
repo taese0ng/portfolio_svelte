@@ -7,7 +7,7 @@
 
 	const backgroundImg = "/images/background.png";
 
-	const handleOpenModal = (id: number) => {
+	const handleOpenModal = (id: string) => {
 		const index = itemList.findIndex((item: DockItemType) => item.id === id);
 		const zIndexs = itemList.map((item: DockItemType) => item.zIndex);
 
@@ -15,14 +15,14 @@
 		itemList[index].isOpen = true;
 	};
 
-	const handleCloseModal = (id: number) => {
+	const handleCloseModal = (id: string) => {
 		const index = itemList.findIndex((item: DockItemType) => item.id === id);
 
 		itemList[index].zIndex = 0;
 		itemList[index].isOpen = false;
 	};
 
-	const handleUpperModal = (id: number) => {
+	const handleUpperModal = (id: string) => {
 		const index = itemList.findIndex((item: DockItemType) => item.id === id);
 		const zIndexs = itemList.map((item: DockItemType) => item.zIndex);
 		const maxIndex = Math.max(...zIndexs);
@@ -33,7 +33,11 @@
 	};
 </script>
 
-<Header />
+<Header
+	itemList="{itemList}"
+	onOpenModal="{handleOpenModal}"
+	onUpperModal="{handleUpperModal}"
+/>
 <main>
 	<img class="background-img" src="{backgroundImg}" alt="background" />
 
@@ -41,8 +45,8 @@
 		{#if item.isOpen}
 			<BaseModal
 				item="{item}"
-				onClose="{handleCloseModal}"
-				onUpper="{handleUpperModal}"
+				onCloseModal="{handleCloseModal}"
+				onUpperModal="{handleUpperModal}"
 			>
 				<svelte:component this="{item.component}" />
 			</BaseModal>
@@ -51,8 +55,8 @@
 </main>
 <Dock
 	itemList="{itemList}"
-	onOpen="{handleOpenModal}"
-	onUpper="{handleUpperModal}"
+	onOpenModal="{handleOpenModal}"
+	onUpperModal="{handleUpperModal}"
 />
 
 <style src="./Home.scss"></style>

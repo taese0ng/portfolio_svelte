@@ -1,6 +1,12 @@
 <script lang="ts">
 	import { onMount } from "svelte";
+	import type { DockItemType } from "@interfaces/dock";
+
+	export let itemList: Array<DockItemType>;
+	export let onOpenModal: (id: string) => void;
+	export let onUpperModal: (id: string) => void;
 	const logoImg = "/images/logo.png";
+	let isFocusedPopup = false;
 
 	let midday = "",
 		hour = 0,
@@ -26,6 +32,26 @@
 		sec = tempSec > 9 ? String(tempSec) : `0${tempSec}`;
 	};
 
+	const handleFocusMenu = () => {
+		isFocusedPopup = true;
+	};
+
+	const handleBlurMenu = () => {
+		setTimeout(() => {
+			isFocusedPopup = false;
+		}, 100);
+	};
+
+	const handleClickMyInfo = () => {
+		const item = itemList.find((item) => item.id === "myInfo");
+
+		if (!item.isOpen) {
+			onOpenModal(item.id);
+		} else {
+			onUpperModal(item.id);
+		}
+	};
+
 	onMount(() => {
 		setTime();
 		setInterval(setTime, 1000);
@@ -34,7 +60,22 @@
 
 <div class="container">
 	<div class="left">
-		<img src="{logoImg}" alt="logo" width="17" height="17" />
+		<div class="menu">
+			<div
+				class="logoWrapper"
+				tabindex="0"
+				on:focus="{handleFocusMenu}"
+				on:blur="{handleBlurMenu}"
+			>
+				<img src="{logoImg}" alt="logo" />
+			</div>
+
+			{#if isFocusedPopup}
+				<ul class="popup">
+					<li on:click="{handleClickMyInfo}">김태성에 관하여</li>
+				</ul>
+			{/if}
+		</div>
 	</div>
 
 	<div class="right">

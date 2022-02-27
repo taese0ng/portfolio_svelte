@@ -2,8 +2,8 @@
 	import type { DockItemType } from "@interfaces/dock";
 	import { onMount } from "svelte";
 	export let item: DockItemType;
-	export let onClose: (id: number) => void;
-	export let onUpper: (id: number) => void;
+	export let onCloseModal: (id: string) => void;
+	export let onUpperModal: (id: string) => void;
 
 	onMount(() => {
 		header.addEventListener("mousedown", onMouseDown);
@@ -36,11 +36,11 @@
 	};
 
 	const handleCloseModal = () => {
-		onClose(item.id);
+		onCloseModal(item.id);
 	};
 
 	const handleUppderModal = () => {
-		onUpper(item.id);
+		onUpperModal(item.id);
 	};
 </script>
 
