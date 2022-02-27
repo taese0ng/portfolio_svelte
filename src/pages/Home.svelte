@@ -5,7 +5,7 @@
 	import { BaseModal } from "@components/Modals";
 	import { itemList } from "@constants/dock";
 
-	const backgroundImg = "images/background.png";
+	const backgroundImg = "/images/background.png";
 
 	const handleOpenModal = (id: number) => {
 		const index = itemList.findIndex((item: DockItemType) => item.id === id);

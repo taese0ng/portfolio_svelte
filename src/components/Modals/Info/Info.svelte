@@ -1,10 +1,10 @@
 <script lang="ts">
-	const imgUrl = 'url("images/profileImg.jpeg")',
-		calendarImg = "images/calendar.png",
-		githubImg = "images/github.png",
-		emailImg = "images/email.png",
-		velogImg = "images/velog.png",
-		instagramImg = "images/instagram.png";
+	const imgUrl = 'url("/images/profileImg.jpeg")',
+		calendarImg = "/images/calendar.png",
+		githubImg = "/images/github.png",
+		emailImg = "/images/email.png",
+		velogImg = "/images/velog.png",
+		instagramImg = "/images/instagram.png";
 
 	const githubHref = "https://github.com/taese0ng",
 		mainHref = "mailto:taese0ng@naver.com",
