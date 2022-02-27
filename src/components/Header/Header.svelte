@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from "svelte";
+	const logoImg = "/images/logo.png";
 
 	let midday = "",
 		hour = 0,
@@ -32,7 +33,9 @@
 </script>
 
 <div class="container">
-	<div class="left"></div>
+	<div class="left">
+		<img src="{logoImg}" alt="logo" width="17" height="17" />
+	</div>
 
 	<div class="right">
 		<div class="time">
