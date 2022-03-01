@@ -1,5 +1,5 @@
 import type { DockItemType } from "@interfaces/dock";
-import { Info, Price } from "@components/Modals";
+import { Info, Price, Settings } from "@components/Modals";
 
 export const itemList: Array<DockItemType> = [
 	{
@@ -26,6 +26,14 @@ export const itemList: Array<DockItemType> = [
 		isOpen: false,
 		icon: "/images/finder.png",
 		component: Info,
+		zIndex: 0,
+	},
+	{
+		id: "settings",
+		title: "환경설정",
+		isOpen: false,
+		icon: "/images/settings.png",
+		component: Settings,
 		zIndex: 0,
 	},
 ];

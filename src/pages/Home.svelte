@@ -1,11 +1,10 @@
 <script lang="ts">
+	import { bgImg } from "~/store";
 	import type { DockItemType } from "@interfaces/dock";
 	import Header from "@components/Header";
 	import Dock from "@components/Dock";
 	import { BaseModal } from "@components/Modals";
 	import { itemList } from "@constants/dock";
-
-	const backgroundImg = "/images/background.png";
 
 	const handleOpenModal = (id: string) => {
 		const index = itemList.findIndex((item: DockItemType) => item.id === id);
@@ -39,7 +38,7 @@
 	onUpperModal="{handleUpperModal}"
 />
 <main>
-	<img class="background-img" src="{backgroundImg}" alt="background" />
+	<img class="background-img" src="{$bgImg}" alt="background" />
 
 	{#each itemList as item}
 		{#if item.isOpen}
