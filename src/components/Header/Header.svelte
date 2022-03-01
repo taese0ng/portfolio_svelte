@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from "svelte";
+	import Calendar from "@components/Calendar";
 	import type { DockItemType } from "@interfaces/dock";
 
 	export let itemList: Array<DockItemType>;
@@ -7,9 +8,10 @@
 	export let onUpperModal: (id: string) => void;
 	const logoImg = "/images/logo.png";
 	let isFocusedPopup = false;
+	let isOpenedCalendar = false;
 
 	let midday = "",
-		hour = 0,
+		hour = "",
 		min = "",
 		sec = "",
 		day = "",
@@ -19,7 +21,7 @@
 	const setTime = () => {
 		const dayList = ["일", "월", "화", "수", "목", "금", "토"],
 			dateObj = new Date(),
-			tempHour = dateObj.getHours(),
+			tempHour = dateObj.getHours() % 12 || 12,
 			tempMin = dateObj.getMinutes(),
 			tempSec = dateObj.getSeconds();
 
@@ -27,7 +29,7 @@
 		date = dateObj.getDate();
 		day = dayList[dateObj.getDay()];
 		midday = tempHour > 11 ? "오후" : "오전";
-		hour = tempHour % 12 || 12;
+		hour = tempHour > 9 ? String(tempHour) : `0${tempHour}`;
 		min = tempMin > 9 ? String(tempMin) : `0${tempMin}`;
 		sec = tempSec > 9 ? String(tempSec) : `0${tempSec}`;
 	};
@@ -52,6 +54,10 @@
 		}
 	};
 
+	const handleOpenCalendar = () => {
+		isOpenedCalendar = !isOpenedCalendar;
+	};
+
 	onMount(() => {
 		setTime();
 		setInterval(setTime, 1000);
@@ -60,7 +66,7 @@
 
 <div class="container">
 	<div class="left">
-		<div class="menu">
+		<div class="elementWrapper">
 			<div
 				class="logoWrapper"
 				tabindex="0"
@@ -71,7 +77,7 @@
 			</div>
 
 			{#if isFocusedPopup}
-				<ul class="popup">
+				<ul class="popup menuList">
 					<li on:click="{handleClickMyInfo}">김태성에 관하여</li>
 				</ul>
 			{/if}
@@ -79,9 +85,17 @@
 	</div>
 
 	<div class="right">
-		<div class="time">
-			٩(◕‿◕｡)۶ {month}월 {date}일 ({day}) {midday}
-			{hour}:{min}:{sec}
+		<div class="elementWrapper">
+			<div class="time" on:click="{handleOpenCalendar}">
+				٩(◕‿◕｡)۶ {month}월 {date}일 ({day}) {midday}
+				{hour}:{min}:{sec}
+			</div>
+
+			{#if isOpenedCalendar}
+				<div class="popup calendarWrapper">
+					<Calendar />
+				</div>
+			{/if}
 		</div>
 	</div>
 </div>

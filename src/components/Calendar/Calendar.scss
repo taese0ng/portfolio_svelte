@@ -1,0 +1,46 @@
+.header {
+	margin: 10px 0;
+}
+
+.title {
+	margin: 3px;
+}
+
+.row {
+	display: flex;
+}
+
+.body {
+	margin: 10px 0;
+}
+
+.item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 3px;
+	font-size: 13px;
+	width: 22px;
+	height: 22px;
+}
+
+@mixin withBorderItem($color) {
+	width: 19px;
+	height: 19px;
+	border: 1.5px solid $color;
+}
+
+.date {
+	border-radius: 5px;
+	&.corsur {
+		cursor: pointer;
+	}
+
+	&.today {
+		@include withBorderItem($blue_20);
+	}
+
+	&.selected {
+		@include withBorderItem($white_70per);
+	}
+}
