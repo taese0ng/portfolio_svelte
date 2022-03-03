@@ -1,3 +1,3 @@
 import { writable } from "svelte/store";
 
-export const bgImg = writable("/images/background01.png");
+export const bgImg = writable("/images/backgrounds/background_monterey.png");

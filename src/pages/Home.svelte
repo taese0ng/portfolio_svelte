@@ -30,6 +30,16 @@
 			itemList[index].zIndex = maxIndex + 1;
 		}
 	};
+
+	const init = () => {
+		const bg = JSON.parse(localStorage.getItem("background")) || null;
+
+		if (bg) {
+			bgImg.set(bg.src);
+		}
+	};
+
+	init();
 </script>
 
 <Header
