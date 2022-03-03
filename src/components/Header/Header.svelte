@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { onMount } from "svelte";
-	import Calendar from "@components/Calendar";
+	import Calendar from "~/components/Header/Calendar";
+	import Time from "~/components/Header/Time";
 	import type { DockItemType } from "@interfaces/dock";
 
 	export let itemList: Array<DockItemType>;
@@ -9,30 +9,6 @@
 	const logoImg = "/images/logo.png";
 	let isFocusedPopup = false;
 	let isOpenedCalendar = false;
-
-	let midday = "",
-		hour = "",
-		min = "",
-		sec = "",
-		day = "",
-		month = 0,
-		date = 0;
-
-	const setTime = () => {
-		const dayList = ["일", "월", "화", "수", "목", "금", "토"],
-			dateObj = new Date(),
-			tempHour = dateObj.getHours() % 12 || 12,
-			tempMin = dateObj.getMinutes(),
-			tempSec = dateObj.getSeconds();
-
-		month = dateObj.getMonth() + 1;
-		date = dateObj.getDate();
-		day = dayList[dateObj.getDay()];
-		midday = tempHour > 11 ? "오후" : "오전";
-		hour = tempHour > 9 ? String(tempHour) : `0${tempHour}`;
-		min = tempMin > 9 ? String(tempMin) : `0${tempMin}`;
-		sec = tempSec > 9 ? String(tempSec) : `0${tempSec}`;
-	};
 
 	const handleFocusMenu = () => {
 		isFocusedPopup = true;
@@ -57,11 +33,6 @@
 	const handleOpenCalendar = () => {
 		isOpenedCalendar = !isOpenedCalendar;
 	};
-
-	onMount(() => {
-		setTime();
-		setInterval(setTime, 1000);
-	});
 </script>
 
 <div class="container">
@@ -86,10 +57,7 @@
 
 	<div class="right">
 		<div class="elementWrapper">
-			<div class="time" on:click="{handleOpenCalendar}">
-				٩(◕‿◕｡)۶ {month}월 {date}일 ({day}) {midday}
-				{hour}:{min}:{sec}
-			</div>
+			<Time onOpenCalendar="{handleOpenCalendar}" />
 
 			{#if isOpenedCalendar}
 				<div class="popup calendarWrapper">

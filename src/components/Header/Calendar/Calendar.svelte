@@ -1,14 +1,15 @@
 <script lang="ts">
-	import { onMount } from "svelte";
+	import { onMount, onDestroy } from "svelte";
 
-	const date = new Date(),
-		dayList = ["일", "월", "화", "수", "목", "금", "토"];
+	const dayList = ["일", "월", "화", "수", "목", "금", "토"];
 
 	let year = 0,
 		month = 0,
 		todate = 0,
 		dateList: Array<Array<number>> = [],
 		selectedDate = 0;
+
+	let interval: NodeJS.Timeout;
 
 	const makeDayList = (startDate: number, lastDate: number) => {
 		const tempArr: Array<Array<number>> = [];
@@ -28,6 +29,7 @@
 	};
 
 	const init = () => {
+		const date = new Date();
 		year = date.getFullYear();
 		month = date.getMonth() + 1;
 		todate = date.getDate();
@@ -48,7 +50,16 @@
 	};
 
 	onMount(() => {
+		const date = new Date();
+
 		init();
+		interval = setInterval(() => {
+			todate = date.getDate();
+		}, 1000);
+	});
+
+	onDestroy(() => {
+		clearInterval(interval);
 	});
 </script>
 

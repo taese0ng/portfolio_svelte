@@ -25,13 +25,11 @@
 }
 
 @mixin withBorderItem($color) {
-	width: 19px;
-	height: 19px;
-	border: 1.5px solid $color;
+	border-radius: 5px;
+	box-shadow: 0 0 0 1.5px $color;
 }
 
 .date {
-	border-radius: 5px;
 	&.corsur {
 		cursor: pointer;
 	}

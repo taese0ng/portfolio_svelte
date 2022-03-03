@@ -22,18 +22,6 @@
 	align-items: center;
 	font-weight: 400;
 	padding-right: 7px;
-
-	.time {
-		width: 230px;
-		font-size: 0.9rem;
-		border-radius: 5px;
-		padding: 2px 8px;
-		cursor: pointer;
-
-		&:hover {
-			background-color: $white_30per;
-		}
-	}
 }
 
 .elementWrapper {
