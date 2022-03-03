@@ -1,13 +1,13 @@
 .container {
 	position: absolute;
-	width: var(--Width);
-	height: var(--Height);
+	width: var(--width);
+	height: var(--height);
 	background: $gray_20;
 	border-radius: 8px;
-	left: calc(50% - var(--Width) / 2);
+	left: calc(50% - var(--width) / 2);
 	top: calc(20%);
 	border: 1px solid $gray_50;
-	z-index: var(--ZIndex);
+	z-index: var(--zIndex);
 }
 
 .body {

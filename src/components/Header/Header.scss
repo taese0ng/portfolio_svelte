@@ -1,5 +1,5 @@
 .container {
-	z-index: $zIndex_header;
+	z-index: $top;
 	position: absolute;
 	background-color: $black_30per;
 	backdrop-filter: blur(10px);
@@ -62,7 +62,7 @@
 .popup {
 	position: absolute;
 	top: 25px;
-	z-index: $zIndex_header;
+	z-index: $top;
 	background-color: $black_50per;
 	backdrop-filter: blur(10px);
 	border-radius: 3px;

@@ -13,7 +13,7 @@
 </script>
 
 <div class="wrapper">
-	<div class="profile__img" style="--Img:{imgUrl}"></div>
+	<div class="profile__img" style="--img:{imgUrl}"></div>
 
 	<ul class="profile__contents">
 		<li class="profile__contents--name">

@@ -7,7 +7,10 @@ module.exports = {
 	preprocess: sveltePreprocess({
 		sourceMap: !production,
 		scss: {
-			prependData: `@import "src/assets/scss/variables.scss";`,
+			prependData: `
+				@import "src/assets/scss/colors.scss";
+				@import "src/assets/scss/zIndex.scss";
+			`,
 		},
 		postcss: {
 			plugins: [autoprefixer()],

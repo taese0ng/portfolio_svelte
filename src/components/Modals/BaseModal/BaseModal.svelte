@@ -49,9 +49,9 @@
 	bind:this="{container}"
 	class="container"
 	style="
-		--Width:{item.width || 500}px;
-		--Height:{item.height || 300}px;
-		--ZIndex:{item.zIndex};
+		--width:{item.width || 500}px;
+		--height:{item.height || 300}px;
+		--zIndex:{item.zIndex};
 	"
 >
 	<div bind:this="{header}" class="header">
