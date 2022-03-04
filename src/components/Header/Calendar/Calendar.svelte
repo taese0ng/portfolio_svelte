@@ -80,7 +80,7 @@
 					{#each dateRow as date}
 						<span
 							class="item date"
-							class:corsur="{date > 0}"
+							class:cursor="{date > 0}"
 							class:today="{todate === date}"
 							class:selected="{selectedDate === date && date > 0}"
 							on:click="{() => handleClickDate(date)}"
