@@ -36,6 +36,8 @@
 	<div class="menu">
 		{#each itemList as item}
 			<div class="menu__item">
+				<div class="menu__item__title">{item.title}</div>
+
 				<div
 					class="menu__item__icon bounce"
 					style="

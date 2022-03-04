@@ -2,6 +2,8 @@
 	import BackgroundSetting from "./BackgroundSetting";
 </script>
 
-<BackgroundSetting />
+<div class="container">
+	<BackgroundSetting />
+</div>
 
 <style src="./Settings.scss"></style>

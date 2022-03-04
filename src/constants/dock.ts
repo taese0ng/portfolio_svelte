@@ -22,7 +22,7 @@ export const itemList: Array<DockItemType> = [
 	},
 	{
 		id: "finder",
-		title: "2",
+		title: "Finder",
 		isOpen: false,
 		icon: "/images/finder.png",
 		component: Finder,

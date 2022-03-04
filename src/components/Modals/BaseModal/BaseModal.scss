@@ -2,7 +2,6 @@
 	position: absolute;
 	width: var(--width);
 	height: var(--height);
-	background: $gray_20;
 	border-radius: 8px;
 	left: calc(50% - var(--width) / 2);
 	top: calc(20%);
@@ -29,6 +28,7 @@
 	user-select: none;
 
 	&.absoluteHeader {
+		z-index: $absoluteHeader;
 		position: absolute;
 		top: 0;
 		background-color: $transparent;

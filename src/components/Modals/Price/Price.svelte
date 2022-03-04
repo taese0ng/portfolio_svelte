@@ -1,6 +1,6 @@
 <script lang="ts">
 </script>
 
-<div>test</div>
+<div class="container">test</div>
 
 <style src="./Price.scss"></style>

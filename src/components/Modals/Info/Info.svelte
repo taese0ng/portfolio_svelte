@@ -12,7 +12,7 @@
 		instagramHref = "https://www.instagram.com/taese0_0ng/";
 </script>
 
-<div class="wrapper">
+<div class="container">
 	<div class="profile__img" style="--img:{imgUrl}"></div>
 
 	<ul class="profile__contents">
