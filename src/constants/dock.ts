@@ -1,5 +1,5 @@
 import type { DockItemType } from "@interfaces/dock";
-import { Info, Price, Settings } from "@components/Modals";
+import { Info, Price, Settings, Finder } from "@components/Modals";
 
 export const itemList: Array<DockItemType> = [
 	{
@@ -25,8 +25,9 @@ export const itemList: Array<DockItemType> = [
 		title: "2",
 		isOpen: false,
 		icon: "/images/finder.png",
-		component: Info,
+		component: Finder,
 		zIndex: 0,
+		isAbsoluteHeader: true,
 	},
 	{
 		id: "settings",

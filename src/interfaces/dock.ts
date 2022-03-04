@@ -9,4 +9,5 @@ export interface DockItemType {
 	zIndex: number;
 	width?: number;
 	height?: number;
+	isAbsoluteHeader?: boolean;
 }

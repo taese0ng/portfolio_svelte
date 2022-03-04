@@ -2,6 +2,7 @@
 	import type { DockItemType } from "@interfaces/dock";
 	import { onMount } from "svelte";
 	export let item: DockItemType;
+	export let absoluteHeader: Boolean = false;
 	export let onCloseModal: (id: string) => void;
 	export let onUpperModal: (id: string) => void;
 
@@ -54,7 +55,7 @@
 		--zIndex:{item.zIndex};
 	"
 >
-	<div bind:this="{header}" class="header">
+	<div bind:this="{header}" class="header" class:absoluteHeader>
 		<div on:click="{handleCloseModal}" class="circle">
 			<div class="circle--icon circle--icon__close">ⅹ</div>
 		</div>

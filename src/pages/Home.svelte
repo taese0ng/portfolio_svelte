@@ -54,6 +54,7 @@
 		{#if item.isOpen}
 			<BaseModal
 				item="{item}"
+				absoluteHeader="{item?.isAbsoluteHeader}"
 				onCloseModal="{handleCloseModal}"
 				onUpperModal="{handleUpperModal}"
 			>
