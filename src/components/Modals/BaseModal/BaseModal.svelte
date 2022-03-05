@@ -16,8 +16,8 @@
 	let header: HTMLDivElement,
 		container: HTMLDivElement,
 		isClicked = false,
-		shiftX: number,
-		shiftY: number;
+		shiftX = 0,
+		shiftY = 0;
 
 	const onMouseMove = (e: MouseEvent) => {
 		if (isClicked) {
@@ -59,7 +59,9 @@
 		<div on:click="{handleCloseModal}" class="circle">
 			<div class="circle--icon circle--icon__close">ⅹ</div>
 		</div>
-		{item.title}
+		{#if !absoluteHeader}
+			{item.title}
+		{/if}
 	</div>
 
 	<div class="body">

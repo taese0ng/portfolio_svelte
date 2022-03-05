@@ -1,35 +1,45 @@
 .container {
 	display: flex;
-	border-radius: 8px;
 	height: calc(100% + 30px);
 }
 
 .sideBarWrapper {
-	border-radius: 8px 0 0 8px;
+	position: relative;
 	backdrop-filter: blur(15px);
 	background-color: $white_70per;
+	padding-top: 30px;
 
 	.sideBar {
-		position: relative;
-		top: 30px;
-		width: 100px;
+		width: var(--width);
+	}
+
+	.widthSetter {
+		position: absolute;
+		right: -5px;
+		top: 0;
+		height: 100%;
+		width: 10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: e-resize;
 	}
 }
 
 .bodyWrapper {
-	border-radius: 0 8px 8px 0;
 	width: 100%;
 
 	.header {
 		width: 100%;
 		height: 30px;
 		background-color: $gray_30;
-		border-radius: 0 8px 0 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	.body {
 		height: calc(100% - 30px);
 		background-color: $white;
-		border-radius: 0 0 8px 0;
 	}
 }

@@ -28,6 +28,8 @@ export const itemList: Array<DockItemType> = [
 		component: Finder,
 		zIndex: 0,
 		isAbsoluteHeader: true,
+		width: 800,
+		height: 500,
 	},
 	{
 		id: "settings",
