@@ -1,8 +1,26 @@
 <script lang="ts">
-	import { Home } from "@pages/index";
+	import { isMobile } from "~/store";
+	import { Home, Error } from "~/pages";
+	let innerWidth = window.innerWidth;
+
+	// $:구문으로 인해 innerWidth가 변경될때마다 handleResizeWindow함수가 실행
+	$: innerWidth, handleResizeWindow();
+
+	const handleResizeWindow = () => {
+		if (innerWidth <= 900) {
+			isMobile.set(true);
+		} else {
+			isMobile.set(false);
+		}
+	};
 </script>
 
-<Home />
+<svelte:window bind:innerWidth />
+{#if $isMobile}
+	<Error />
+{:else}
+	<Home />
+{/if}
 
 <style>
 	:global(body) {
