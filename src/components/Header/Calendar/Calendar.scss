@@ -62,7 +62,8 @@
 		@include withBorderItem($blue_20);
 	}
 
-	&.selected {
+	&.selected,
+	&:hover {
 		@include withBorderItem($white_70per);
 	}
 }
