@@ -1,7 +1,7 @@
 import type { BgImg } from "@interfaces/bgSetting";
 
 const bgUrl = "/images/backgrounds";
-const thumbUrl = "/images/thumbnails";
+const thumbUrl = "/images/thumbnails/backgrounds";
 
 export const bgImgs: Array<BgImg> = [
 	{

@@ -6,7 +6,7 @@
 	export let itemList: Array<DockItemType>;
 	export let onOpenModal: (id: string) => void;
 	export let onUpperModal: (id: string) => void;
-	const logoImg = "/images/logo.png";
+	const logoImg = "/images/icons/logo.png";
 	let isFocusedPopup = false;
 	let isOpenedCalendar = false;
 

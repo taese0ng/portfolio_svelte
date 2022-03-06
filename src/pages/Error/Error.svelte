@@ -1,5 +1,5 @@
 <script lang="ts">
-	const infoIcon = "/images/info.png";
+	const infoIcon = "/images/icons/info.png";
 </script>
 
 <div class="container">

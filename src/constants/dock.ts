@@ -1,12 +1,14 @@
 import type { DockItemType } from "@interfaces/dock";
-import { Info, Price, Settings, Finder } from "@components/Modals";
+import { Info, Award, Settings, Finder } from "@components/Modals";
+
+const iconUrl = "/images/icons";
 
 export const itemList: Array<DockItemType> = [
 	{
 		id: "myInfo",
 		title: "내 정보",
 		isOpen: false,
-		icon: "/images/myInfo.png",
+		icon: `${iconUrl}/myInfo.png`,
 		component: Info,
 		zIndex: 0,
 	},
@@ -14,8 +16,8 @@ export const itemList: Array<DockItemType> = [
 		id: "price",
 		title: "수상경력",
 		isOpen: false,
-		icon: "/images/price.png",
-		component: Price,
+		icon: `${iconUrl}/price.png`,
+		component: Award,
 		zIndex: 0,
 		width: 800,
 		height: 500,
@@ -24,7 +26,7 @@ export const itemList: Array<DockItemType> = [
 		id: "finder",
 		title: "Finder",
 		isOpen: false,
-		icon: "/images/finder.png",
+		icon: `${iconUrl}/finder.png`,
 		component: Finder,
 		zIndex: 0,
 		isAbsoluteHeader: true,
@@ -35,7 +37,7 @@ export const itemList: Array<DockItemType> = [
 		id: "settings",
 		title: "환경설정",
 		isOpen: false,
-		icon: "/images/settings.png",
+		icon: `${iconUrl}/settings.png`,
 		component: Settings,
 		zIndex: 0,
 	},
