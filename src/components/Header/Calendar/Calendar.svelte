@@ -6,8 +6,11 @@
 	let year = 0,
 		month = 0,
 		todate = 0,
+		toMonth = 0,
+		toYear = 0,
 		dateList: Array<Array<number>> = [],
-		selectedDate = 0;
+		selectedDate = 0,
+		mainDate = new Date();
 
 	let interval: NodeJS.Timeout;
 
@@ -29,18 +32,16 @@
 	};
 
 	const init = () => {
-		const date = new Date();
-		year = date.getFullYear();
-		month = date.getMonth() + 1;
-		todate = date.getDate();
+		year = mainDate.getFullYear();
+		month = mainDate.getMonth() + 1;
 
-		date.setDate(1);
-		const startDay = date.getDay();
-		const startDate = date.getDate() - startDay;
+		mainDate.setDate(1);
+		const startDay = mainDate.getDay();
+		const startDate = mainDate.getDate() - startDay;
 
-		date.setMonth(month);
-		date.setDate(0);
-		const lastDate = date.getDate();
+		mainDate.setMonth(month);
+		mainDate.setDate(0);
+		const lastDate = mainDate.getDate();
 
 		dateList = makeDayList(startDate, lastDate);
 	};
@@ -49,12 +50,39 @@
 		selectedDate = date;
 	};
 
-	onMount(() => {
-		const date = new Date();
-
+	const handlePrevCalendar = () => {
+		const nowMonth = mainDate.getMonth();
+		mainDate.setDate(1);
+		mainDate.setMonth(nowMonth - 1);
 		init();
+	};
+
+	const handleNowCalendar = () => {
+		mainDate = new Date();
+		init();
+	};
+
+	const handleNextCalendar = () => {
+		const nowMonth = mainDate.getMonth();
+		mainDate.setDate(1);
+		mainDate.setMonth(nowMonth + 1);
+		init();
+	};
+
+	const getTodayValue = (date: Date) => {
+		toMonth = date.getMonth() + 1;
+		toYear = date.getFullYear();
+		todate = date.getDate();
+	};
+
+	onMount(() => {
+		init();
+
+		const date = new Date();
+		getTodayValue(date);
+
 		interval = setInterval(() => {
-			todate = date.getDate();
+			getTodayValue(date);
 		}, 1000);
 	});
 
@@ -66,6 +94,12 @@
 <div>
 	<div class="header">
 		<div class="title">{month}월 {year}</div>
+
+		<div class="controlWrapper">
+			<div class="controlBtn" on:click="{handlePrevCalendar}">◁</div>
+			<div class="controlBtn" on:click="{handleNowCalendar}">○</div>
+			<div class="controlBtn" on:click="{handleNextCalendar}">▷</div>
+		</div>
 	</div>
 	<div class="body">
 		<div class="row">
@@ -81,7 +115,9 @@
 						<span
 							class="item date"
 							class:cursor="{date > 0}"
-							class:today="{todate === date}"
+							class:today="{todate === date &&
+								toMonth === month &&
+								toYear === year}"
 							class:selected="{selectedDate === date && date > 0}"
 							on:click="{() => handleClickDate(date)}"
 						>

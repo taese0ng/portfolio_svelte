@@ -1,9 +1,33 @@
 .header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	margin: 10px 0;
-}
 
-.title {
-	margin: 3px;
+	.title {
+		margin: 3px;
+	}
+
+	.controlWrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.controlBtn {
+			cursor: pointer;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 20px;
+			height: 20px;
+			border-radius: 5px;
+			font-size: 12px;
+
+			&:hover {
+				background-color: $white_20per;
+			}
+		}
+	}
 }
 
 .row {

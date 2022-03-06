@@ -22,27 +22,27 @@
 
 		<li>
 			<img class="profile__contents--icon" src="{calendarImg}" alt="calendar" />
-			1996/08/26
+			<span>1996-08-26</span>
 		</li>
 
 		<li>
 			<a href="{githubHref}" target="_blank">
 				<img class="profile__contents--icon" src="{githubImg}" alt="github" />
-				GitHub
+				<span>GitHub</span>
 			</a>
 		</li>
 
 		<li>
 			<a href="{mainHref}" target="_top">
 				<img class="profile__contents--icon" src="{emailImg}" alt="email" />
-				Email
+				<span>Email</span>
 			</a>
 		</li>
 
 		<li>
 			<a href="{velogHref}" target="_blank">
 				<img class="profile__contents--icon" src="{velogImg}" alt="velog" />
-				Velog
+				<span>Velog</span>
 			</a>
 		</li>
 
@@ -53,7 +53,7 @@
 					src="{instagramImg}"
 					alt="instagram"
 				/>
-				Instagram
+				<span>Instagram</span>
 			</a>
 		</li>
 	</ul>
