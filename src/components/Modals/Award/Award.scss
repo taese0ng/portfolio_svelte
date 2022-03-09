@@ -44,3 +44,13 @@
 		}
 	}
 }
+
+.imageWrapper {
+	height: 50vh;
+	border-radius: 15px;
+	overflow: hidden;
+
+	img {
+		height: 100%;
+	}
+}

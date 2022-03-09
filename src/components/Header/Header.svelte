@@ -35,7 +35,7 @@
 	};
 </script>
 
-<div class="container">
+<div class="container" id="header">
 	<div class="left">
 		<div class="elementWrapper">
 			<div

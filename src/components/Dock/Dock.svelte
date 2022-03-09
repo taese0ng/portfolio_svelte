@@ -32,7 +32,7 @@
 	});
 </script>
 
-<div class="container">
+<div class="container" id="dock">
 	<div class="menu">
 		{#each itemList as item}
 			<div class="menu__item">

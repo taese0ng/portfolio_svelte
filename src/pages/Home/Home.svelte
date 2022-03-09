@@ -42,12 +42,13 @@
 	init();
 </script>
 
-<Header
-	itemList="{itemList}"
-	onOpenModal="{handleOpenModal}"
-	onUpperModal="{handleUpperModal}"
-/>
 <main>
+	<Header
+		itemList="{itemList}"
+		onOpenModal="{handleOpenModal}"
+		onUpperModal="{handleUpperModal}"
+	/>
+
 	<img class="background-img" src="{$bgImg}" alt="background" />
 
 	{#each itemList as item}
@@ -62,11 +63,12 @@
 			</BaseModal>
 		{/if}
 	{/each}
+
+	<Dock
+		itemList="{itemList}"
+		onOpenModal="{handleOpenModal}"
+		onUpperModal="{handleUpperModal}"
+	/>
 </main>
-<Dock
-	itemList="{itemList}"
-	onOpenModal="{handleOpenModal}"
-	onUpperModal="{handleUpperModal}"
-/>
 
 <style src="./Home.scss"></style>
