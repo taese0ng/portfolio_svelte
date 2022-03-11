@@ -1,0 +1,38 @@
+.container {
+	background-color: $gray_20;
+	height: 100%;
+
+	ul,
+	li {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.wrapper {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	flex-flow: row wrap;
+	overflow: auto;
+
+	.skill {
+		width: 150px;
+		height: 150px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: 30px;
+
+		img {
+			height: 85%;
+		}
+
+		div {
+			font-size: 20px;
+			font-weight: 600;
+			margin-top: 15px;
+		}
+	}
+}
