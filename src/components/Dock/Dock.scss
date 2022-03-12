@@ -63,8 +63,13 @@
 		margin: 0 6px;
 		cursor: pointer;
 		background-color: var(--bgColor);
-		background-image: var(--icon);
 		background-size: 100%;
+		overflow: hidden;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
 	}
 
 	&__dot {

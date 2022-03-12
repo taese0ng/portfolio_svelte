@@ -2,7 +2,7 @@
 	import { onMount, onDestroy } from "svelte";
 	const dock: HTMLDivElement = document.querySelector("#dock");
 	const header: HTMLDivElement = document.querySelector("#header");
-	const closeIcon = "/images/icons/closeIcon.png";
+	const closeIcon = "./images/icons/closeIcon.png";
 
 	export let onClosePopup: () => void;
 	export let hasCloseBtn: boolean = false;
