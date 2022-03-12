@@ -41,11 +41,12 @@
 				<div
 					class="menu__item__icon bounce"
 					style="
-					--icon:{`url(${item.icon})`}; 
 					--bgColor:{item.icon ? 'transparent' : 'red'};
 					"
 					on:click="{(e) => onClickMenu(e, item)}"
-				></div>
+				>
+					<img src="{item.icon}" alt="{item.title}" />
+				</div>
 
 				{#if item.isOpen}
 					<div class="menu__item__dot"></div>

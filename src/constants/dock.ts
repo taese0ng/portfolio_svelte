@@ -1,7 +1,7 @@
 import type { DockItemType } from "@interfaces/dock";
 import { Info, Award, Settings, Finder, Skill } from "@components/Modals";
 
-const iconUrl = "/images/icons";
+const iconUrl = "./images/icons";
 
 export const itemList: Array<DockItemType> = [
 	{

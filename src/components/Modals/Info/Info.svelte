@@ -1,6 +1,6 @@
 <script lang="ts">
-	const iconUrl = "/images/icons";
-	const imgUrl = `url(${iconUrl}/profileImg.jpeg)`,
+	const iconUrl = "./images/icons";
+	const imgUrl = `${iconUrl}/profileImg.jpeg`,
 		calendarImg = `${iconUrl}/calendar.png`,
 		githubImg = `${iconUrl}/github.png`,
 		emailImg = `${iconUrl}/email.png`,
@@ -14,7 +14,9 @@
 </script>
 
 <div class="container">
-	<div class="profile__img" style="--img:{imgUrl}"></div>
+	<div class="profile__img">
+		<img src="{imgUrl}" alt="profileImg" />
+	</div>
 
 	<ul class="profile__contents">
 		<li class="profile__contents--name">

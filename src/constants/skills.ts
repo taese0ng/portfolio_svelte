@@ -1,6 +1,6 @@
 import type { Skill } from "@interfaces/skills";
 
-const skillUrl = "/images/skills";
+const skillUrl = "./images/skills";
 
 export const skillList: Array<Skill> = [
 	{

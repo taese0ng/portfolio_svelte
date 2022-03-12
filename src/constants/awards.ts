@@ -1,7 +1,7 @@
 import type { Award } from "@interfaces/awards";
 
-const awardUrl = "/images/awards";
-const thumbUrl = "/images/thumbnails/awards";
+const awardUrl = "./images/awards";
+const thumbUrl = "./images/thumbnails/awards";
 
 export const awardList: Array<Award> = [
 	{
