@@ -19,20 +19,28 @@
 
 	.skill {
 		width: 150px;
-		height: 150px;
+		height: auto;
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
 		align-items: center;
 		margin: 30px;
 
 		img {
-			height: 85%;
+			border-radius: 10px;
+			max-height: 100px;
+			width: auto;
 		}
 
 		div {
 			font-size: 20px;
 			font-weight: 600;
 			margin-top: 15px;
+		}
+
+		&:hover {
+			border-radius: 5px;
+			box-shadow: 0 0 0 5px $blue_20;
 		}
 	}
 }
