@@ -3,17 +3,26 @@ import { Info, Award, Settings, Finder, Skill } from "@components/Modals";
 
 const iconUrl = "./images/icons";
 
+export const itemIDs = {
+	myInfo: "myInfo",
+	price: "price",
+	skill: "skill",
+	finder: "finder",
+	settings: "settings",
+};
+
 export const itemList: Array<DockItemType> = [
 	{
-		id: "myInfo",
+		id: itemIDs.myInfo,
 		title: "내 정보",
 		isOpen: false,
 		icon: `${iconUrl}/myInfo.png`,
 		component: Info,
 		zIndex: 0,
+		nowOpen: false,
 	},
 	{
-		id: "price",
+		id: itemIDs.price,
 		title: "수상경력",
 		isOpen: false,
 		icon: `${iconUrl}/price.png`,
@@ -21,9 +30,10 @@ export const itemList: Array<DockItemType> = [
 		zIndex: 0,
 		width: 800,
 		height: 500,
+		nowOpen: false,
 	},
 	{
-		id: "skill",
+		id: itemIDs.skill,
 		title: "기술스택",
 		isOpen: false,
 		icon: `${iconUrl}/skill.png`,
@@ -31,9 +41,10 @@ export const itemList: Array<DockItemType> = [
 		zIndex: 0,
 		width: 800,
 		height: 500,
+		nowOpen: false,
 	},
 	{
-		id: "finder",
+		id: itemIDs.finder,
 		title: "Finder",
 		isOpen: false,
 		icon: `${iconUrl}/finder.png`,
@@ -42,13 +53,15 @@ export const itemList: Array<DockItemType> = [
 		isAbsoluteHeader: true,
 		width: 800,
 		height: 500,
+		nowOpen: false,
 	},
 	{
-		id: "settings",
+		id: itemIDs.settings,
 		title: "환경설정",
 		isOpen: false,
 		icon: `${iconUrl}/settings.png`,
 		component: Settings,
 		zIndex: 0,
+		nowOpen: false,
 	},
 ];

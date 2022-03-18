@@ -8,6 +8,10 @@
 	top: calc(20%);
 	border: 1px solid $gray_50;
 	z-index: var(--zIndex);
+
+	&.visibility {
+		visibility: hidden;
+	}
 }
 
 .body {
