@@ -15,9 +15,8 @@
 			e.currentTarget.classList.remove("bounce"); // reset animation
 			void e.currentTarget.offsetWidth; // trigger reflow
 			e.currentTarget.classList.add("bounce"); // start animation
-			setTimeout(() => {
-				onOpenModal(item.id);
-			}, 900);
+
+			onOpenModal(item.id);
 		} else {
 			onUpperModal(item.id);
 		}

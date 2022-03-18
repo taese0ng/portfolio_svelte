@@ -2,15 +2,25 @@
 	import type { DockItemType } from "@interfaces/dock";
 	import { onMount } from "svelte";
 	export let item: DockItemType;
-	export let absoluteHeader: Boolean = false;
+	export let absoluteHeader = false;
 	export let onCloseModal: (id: string) => void;
 	export let onUpperModal: (id: string) => void;
+	export let nowOpen = false;
+
+	let isVisible = false;
 
 	onMount(() => {
 		header.addEventListener("mousedown", onMouseDown);
 		header.addEventListener("mouseup", onMouseUp);
 		window.addEventListener("mousemove", onMouseMove);
 		window.addEventListener("mouseup", onMouseUp);
+
+		setTimeout(
+			() => {
+				isVisible = true;
+			},
+			nowOpen ? 0 : 900,
+		);
 	});
 
 	let header: HTMLDivElement,
@@ -49,6 +59,7 @@
 	on:mousedown="{handleUppderModal}"
 	bind:this="{container}"
 	class="container"
+	class:visibility="{!isVisible}"
 	style="
 		--width:{item.width || 500}px;
 		--height:{item.height || 300}px;

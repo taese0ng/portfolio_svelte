@@ -2,9 +2,10 @@
 	import Calendar from "~/components/Header/Calendar";
 	import Time from "~/components/Header/Time";
 	import type { DockItemType } from "@interfaces/dock";
+	import { itemIDs } from "@constants/dock";
 
 	export let itemList: Array<DockItemType>;
-	export let onOpenModal: (id: string) => void;
+	export let onOpenModal: (id: string, nowOpen: boolean) => void;
 	export let onUpperModal: (id: string) => void;
 	const logoImg = "./images/icons/logo.png";
 	let isFocusedPopup = false;
@@ -21,10 +22,10 @@
 	};
 
 	const handleClickMyInfo = () => {
-		const item = itemList.find((item) => item.id === "myInfo");
+		const item = itemList.find((item) => item.id === itemIDs.myInfo);
 
 		if (!item.isOpen) {
-			onOpenModal(item.id);
+			onOpenModal(item.id, true);
 		} else {
 			onUpperModal(item.id);
 		}

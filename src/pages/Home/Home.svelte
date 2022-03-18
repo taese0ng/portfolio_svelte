@@ -6,12 +6,13 @@
 	import { BaseModal } from "@components/Modals";
 	import { itemList } from "@constants/dock";
 
-	const handleOpenModal = (id: string) => {
+	const handleOpenModal = (id: string, nowOpen = false) => {
 		const index = itemList.findIndex((item: DockItemType) => item.id === id);
 		const zIndexs = itemList.map((item: DockItemType) => item.zIndex);
 
 		itemList[index].zIndex = Math.max(...zIndexs) + 1;
 		itemList[index].isOpen = true;
+		itemList[index].nowOpen = nowOpen;
 	};
 
 	const handleCloseModal = (id: string) => {
@@ -56,6 +57,7 @@
 			<BaseModal
 				item="{item}"
 				absoluteHeader="{item?.isAbsoluteHeader}"
+				nowOpen="{item.nowOpen}"
 				onCloseModal="{handleCloseModal}"
 				onUpperModal="{handleUpperModal}"
 			>
