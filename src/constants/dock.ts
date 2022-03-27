@@ -6,6 +6,7 @@ import {
 	Settings,
 	Finder,
 	Skill,
+	History,
 } from "@components/Modals";
 
 const iconUrl = "./images/icons";
@@ -17,6 +18,7 @@ export const itemIDs = {
 	skill: "skill",
 	finder: "finder",
 	settings: "settings",
+	history: "history",
 };
 
 export const itemList: Array<DockItemType> = [
@@ -58,6 +60,18 @@ export const itemList: Array<DockItemType> = [
 		icon: `${iconUrl}/skill.png`,
 		component: Skill,
 		zIndex: 0,
+		width: 800,
+		height: 500,
+		nowOpen: false,
+	},
+	{
+		id: itemIDs.history,
+		title: "히스토리",
+		isOpen: false,
+		icon: `${iconUrl}/history.png`,
+		component: History,
+		zIndex: 0,
+		isAbsoluteHeader: true,
 		width: 800,
 		height: 500,
 		nowOpen: false,
