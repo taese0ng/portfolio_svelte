@@ -1,11 +1,19 @@
 import type { DockItemType } from "@interfaces/dock";
-import { Info, Award, Settings, Finder, Skill } from "@components/Modals";
+import {
+	Info,
+	Award,
+	Certificate,
+	Settings,
+	Finder,
+	Skill,
+} from "@components/Modals";
 
 const iconUrl = "./images/icons";
 
 export const itemIDs = {
 	myInfo: "myInfo",
-	price: "price",
+	award: "award",
+	certificate: "certificate",
 	skill: "skill",
 	finder: "finder",
 	settings: "settings",
@@ -22,14 +30,25 @@ export const itemList: Array<DockItemType> = [
 		nowOpen: false,
 	},
 	{
-		id: itemIDs.price,
+		id: itemIDs.award,
 		title: "수상경력",
 		isOpen: false,
-		icon: `${iconUrl}/price.png`,
+		icon: `${iconUrl}/award.png`,
 		component: Award,
 		zIndex: 0,
 		width: 800,
 		height: 500,
+		nowOpen: false,
+	},
+	{
+		id: itemIDs.certificate,
+		title: "자격증",
+		isOpen: false,
+		icon: `${iconUrl}/certificate.png`,
+		component: Certificate,
+		zIndex: 0,
+		width: 600,
+		height: 400,
 		nowOpen: false,
 	},
 	{
