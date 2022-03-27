@@ -9,6 +9,12 @@
 
 	let isVisible = false;
 
+	let header: HTMLDivElement,
+		container: HTMLDivElement,
+		isClicked = false,
+		shiftX = 0,
+		shiftY = 0;
+
 	onMount(() => {
 		header.addEventListener("mousedown", onMouseDown);
 		header.addEventListener("mouseup", onMouseUp);
@@ -22,12 +28,6 @@
 			nowOpen ? 0 : 900,
 		);
 	});
-
-	let header: HTMLDivElement,
-		container: HTMLDivElement,
-		isClicked = false,
-		shiftX = 0,
-		shiftY = 0;
 
 	const onMouseMove = (e: MouseEvent) => {
 		if (isClicked) {
