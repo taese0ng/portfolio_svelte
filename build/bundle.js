@@ -2341,13 +2341,13 @@ var app = (function () {
     			t3 = text(t3_value);
     			t4 = text(")");
     			t5 = space();
-    			attr_dev(img, "class", "item__img svelte-1ialea8");
+    			attr_dev(img, "class", "item__img svelte-rbtcal");
     			if (!src_url_equal(img.src, img_src_value = /*award*/ ctx[5].thumb)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", /*award*/ ctx[5].title);
     			add_location(img, file$a, 17, 4, 453);
-    			attr_dev(div, "class", "item__title svelte-1ialea8");
+    			attr_dev(div, "class", "item__title svelte-rbtcal");
     			add_location(div, file$a, 18, 4, 523);
-    			attr_dev(li, "class", "item svelte-1ialea8");
+    			attr_dev(li, "class", "item svelte-rbtcal");
     			add_location(li, file$a, 16, 3, 389);
     		},
     		m: function mount(target, anchor) {
@@ -2457,9 +2457,9 @@ var app = (function () {
     			img = element("img");
     			if (!src_url_equal(img.src, img_src_value = /*selectedAward*/ ctx[1].src)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", img_alt_value = /*selectedAward*/ ctx[1].title);
-    			attr_dev(img, "class", "svelte-1ialea8");
+    			attr_dev(img, "class", "svelte-rbtcal");
     			add_location(img, file$a, 26, 4, 720);
-    			attr_dev(div, "class", "imageWrapper svelte-1ialea8");
+    			attr_dev(div, "class", "imageWrapper svelte-rbtcal");
     			add_location(div, file$a, 25, 3, 689);
     		},
     		m: function mount(target, anchor) {
@@ -2517,9 +2517,9 @@ var app = (function () {
 
     			t = space();
     			if (if_block) if_block.c();
-    			attr_dev(ul, "class", "wrapper svelte-1ialea8");
+    			attr_dev(ul, "class", "wrapper svelte-rbtcal");
     			add_location(ul, file$a, 14, 1, 336);
-    			attr_dev(div, "class", "container svelte-1ialea8");
+    			attr_dev(div, "class", "container svelte-rbtcal");
     			add_location(div, file$a, 13, 0, 311);
     		},
     		l: function claim(nodes) {
@@ -2722,13 +2722,13 @@ var app = (function () {
     			t3 = text(t3_value);
     			t4 = text(")");
     			t5 = space();
-    			attr_dev(img, "class", "item__img svelte-t6zr68");
+    			attr_dev(img, "class", "item__img svelte-yht2qc");
     			if (!src_url_equal(img.src, img_src_value = /*certificate*/ ctx[5].thumb)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", /*certificate*/ ctx[5].title);
     			add_location(img, file$9, 17, 4, 507);
-    			attr_dev(div, "class", "item__title svelte-t6zr68");
+    			attr_dev(div, "class", "item__title svelte-yht2qc");
     			add_location(div, file$9, 22, 4, 608);
-    			attr_dev(li, "class", "item svelte-t6zr68");
+    			attr_dev(li, "class", "item svelte-yht2qc");
     			add_location(li, file$9, 16, 3, 437);
     		},
     		m: function mount(target, anchor) {
@@ -2838,9 +2838,9 @@ var app = (function () {
     			img = element("img");
     			if (!src_url_equal(img.src, img_src_value = /*selectedCertificate*/ ctx[1].src)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", img_alt_value = /*selectedCertificate*/ ctx[1].title);
-    			attr_dev(img, "class", "svelte-t6zr68");
+    			attr_dev(img, "class", "svelte-yht2qc");
     			add_location(img, file$9, 30, 4, 817);
-    			attr_dev(div, "class", "imageWrapper svelte-t6zr68");
+    			attr_dev(div, "class", "imageWrapper svelte-yht2qc");
     			add_location(div, file$9, 29, 3, 786);
     		},
     		m: function mount(target, anchor) {
@@ -2898,9 +2898,9 @@ var app = (function () {
 
     			t = space();
     			if (if_block) if_block.c();
-    			attr_dev(ul, "class", "wrapper svelte-t6zr68");
+    			attr_dev(ul, "class", "wrapper svelte-yht2qc");
     			add_location(ul, file$9, 14, 1, 372);
-    			attr_dev(div, "class", "container svelte-t6zr68");
+    			attr_dev(div, "class", "container svelte-yht2qc");
     			add_location(div, file$9, 13, 0, 347);
     		},
     		l: function claim(nodes) {
