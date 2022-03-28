@@ -44,8 +44,9 @@
 }
 
 .imageWrapper {
-	height: 80vh;
-	max-width: calc(100vw - 150px);
+	max-height: calc(100vh - 150px);
+	width: 80vw;
+	max-width: 1300px;
 	border-radius: 15px;
 	overflow: hidden;
 
