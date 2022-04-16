@@ -1,0 +1,37 @@
+.container {
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
+
+.percentage {
+	margin-right: 4px;
+	font-size: 13px;
+}
+
+.batteryOuter {
+	position: relative;
+	width: 20px;
+	height: 8px;
+	border-radius: 4px;
+	border: 1px solid $white;
+	padding: 1.2px;
+
+	.batteryInner {
+		width: var(--percent);
+		height: 100%;
+		border-radius: 2px;
+		background-color: $white;
+	}
+	&::before {
+		content: "";
+		position: absolute;
+		transform: translateY(-50%);
+		top: 50%;
+		right: -4px;
+		width: 1.8px;
+		height: 4px;
+		border-radius: 0 8px 8px 0;
+		background-color: $white;
+	}
+}
