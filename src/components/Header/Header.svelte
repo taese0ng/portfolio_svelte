@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Calendar from "~/components/Header/Calendar";
 	import Time from "~/components/Header/Time";
+	import Battery from "~/components/Header/Battery";
 	import type { DockItemType } from "@interfaces/dock";
 	import { itemIDs } from "@constants/dock";
 
@@ -58,13 +59,19 @@
 
 	<div class="right">
 		<div class="elementWrapper">
-			<Time onOpenCalendar="{handleOpenCalendar}" />
+			<div class="element">
+				<Battery onPercent="{true}" />
+			</div>
 
-			{#if isOpenedCalendar}
-				<div class="popup calendarWrapper">
-					<Calendar />
-				</div>
-			{/if}
+			<div class="element">
+				<Time onOpenCalendar="{handleOpenCalendar}" />
+
+				{#if isOpenedCalendar}
+					<div class="popup calendarWrapper">
+						<Calendar />
+					</div>
+				{/if}
+			</div>
 		</div>
 	</div>
 </div>

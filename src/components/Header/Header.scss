@@ -22,6 +22,26 @@
 	align-items: center;
 	font-weight: 400;
 	padding-right: 7px;
+	height: 100%;
+
+	.elementWrapper {
+		height: 100%;
+		display: flex;
+		align-items: center;
+		.element {
+			height: 70%;
+			display: flex;
+			align-items: center;
+			margin-left: 5px;
+			border-radius: 5px;
+			padding: 2px 5px;
+			cursor: pointer;
+
+			&:hover {
+				background-color: $white_30per;
+			}
+		}
+	}
 }
 
 .elementWrapper {

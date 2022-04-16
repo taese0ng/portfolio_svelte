@@ -1,11 +1,7 @@
 .time {
+	display: flex;
+	align-items: center;
 	width: 250px;
+	height: 100%;
 	font-size: 0.9rem;
-	border-radius: 5px;
-	padding: 2px 5px;
-	cursor: pointer;
-
-	&:hover {
-		background-color: $white_30per;
-	}
 }
