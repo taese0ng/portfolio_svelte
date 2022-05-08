@@ -22,7 +22,7 @@
 		month = dateObj.getMonth() + 1;
 		date = dateObj.getDate();
 		day = dayList[dateObj.getDay()];
-		midday = tempHour > 11 ? "오후" : "오전";
+		midday = dateObj.getHours() < 12 ? "오전" : "오후";
 		hour = tempHour > 9 ? String(tempHour) : `0${tempHour}`;
 		min = tempMin > 9 ? String(tempMin) : `0${tempMin}`;
 		sec = tempSec > 9 ? String(tempSec) : `0${tempSec}`;
