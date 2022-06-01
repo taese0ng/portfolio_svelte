@@ -67,14 +67,14 @@ export const itemList: Array<DockItemType> = [
 	{
 		id: itemIDs.history,
 		title: "히스토리",
-		isOpen: true,
+		isOpen: false,
 		icon: `${iconUrl}/history.png`,
 		component: History,
 		zIndex: 0,
 		isAbsoluteHeader: true,
 		width: 800,
 		height: 500,
-		nowOpen: true,
+		nowOpen: false,
 	},
 	{
 		id: itemIDs.finder,
