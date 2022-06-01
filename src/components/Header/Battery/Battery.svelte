@@ -34,7 +34,7 @@
 {#if isSupport}
 	<div class="container">
 		{#if onPercent}
-			<div class="percentage">{batteryPercent}%</div>
+			<div class="percentage">{batteryPercent.toFixed()}%</div>
 		{/if}
 
 		<div class="batteryOuter">
