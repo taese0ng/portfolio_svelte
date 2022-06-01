@@ -30,7 +30,7 @@
 
 				&:hover,
 				&.focus {
-					background-color: $gray_70;
+					background-color: $gray_20per;
 				}
 
 				&.focus {
@@ -67,24 +67,59 @@
 
 	.body {
 		height: calc(100% - 30px);
-		background-color: $white;
+		background-color: $gray_20;
 
 		.histories {
 			height: 100%;
 			overflow: auto;
 			.history {
-				padding: 20px 30px;
+				position: relative;
+				overflow: hidden;
+				display: flex;
+				margin: 20px 10px;
+				padding: 10px;
+				background-color: $white;
+				border-radius: 10px;
 
-				&__title {
-					font-size: 20px;
-					font-weight: 600;
+				&__color {
+					position: absolute;
+					left: 0;
+					top: 0;
+					background-color: $blue_20;
+					width: 9px;
+					height: 100%;
 				}
+				&__wrapper {
+					margin-left: 10px;
+					width: calc(100% - 30px);
 
-				&__content {
-					font-size: 17px;
-					margin-top: 5px;
-					word-break: keep-all;
-					line-height: 25px;
+					&--title {
+						font-size: 22px;
+						font-weight: 600;
+					}
+
+					&--date {
+						color: $gray_70per;
+						margin: 5px 0 10px 0;
+						display: flex;
+						align-items: center;
+
+						img {
+							width: 15px;
+							height: 15px;
+							margin-right: 4px;
+						}
+					}
+
+					&--content {
+						background-color: $gray_10per;
+						width: 100%;
+						padding: 10px;
+						border-radius: 5px;
+						font-size: 16px;
+						word-break: keep-all;
+						line-height: 25px;
+					}
 				}
 			}
 		}

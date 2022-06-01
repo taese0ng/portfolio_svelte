@@ -1,10 +1,15 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 	import { historyList } from "@constants/histories";
+	import type { History } from "@interfaces/history";
+
+	const clockIcon = "./images/icons/clock.png";
 
 	let widthSetter: HTMLSpanElement, container: HTMLDivElement;
 	let width = JSON.parse(localStorage.getItem("history_sidebar_width")) || 200,
 		isClicked = false;
+	let histories: Array<History> = [];
+
 	const years = historyList
 		.filter(
 			(history, idx, originList) =>
@@ -15,12 +20,6 @@
 		)
 		.map((history) => history.from.getFullYear());
 	let selectedYear: number = years[0];
-
-	onMount(() => {
-		widthSetter.addEventListener("mousedown", onMouseDown);
-		window.addEventListener("mousemove", onMouseMove);
-		window.addEventListener("mouseup", onMouseUp);
-	});
 
 	const onMouseDown = () => {
 		isClicked = true;
@@ -45,9 +44,29 @@
 		}
 	};
 
+	const getHistoryList = () => {
+		histories = historyList.filter(
+			(history) => history.from.getFullYear() === selectedYear,
+		);
+	};
+
 	const handleClickYear = (year: number) => {
 		selectedYear = year;
+		getHistoryList();
 	};
+
+	const getDate = (history: History) => {
+		const year = history.from.getFullYear();
+		const month = history.from.getMonth() + 1;
+		return `${year}-${month < 10 ? `0${month}` : month}`;
+	};
+
+	onMount(() => {
+		getHistoryList();
+		widthSetter.addEventListener("mousedown", onMouseDown);
+		window.addEventListener("mousemove", onMouseMove);
+		window.addEventListener("mouseup", onMouseUp);
+	});
 </script>
 
 <div bind:this="{container}" class="container">
@@ -78,13 +97,17 @@
 		<div class="header">히스토리</div>
 		<div class="body">
 			<ul class="histories">
-				{#each historyList as history}
-					{#if history.from.getFullYear() === selectedYear}
-						<li class="history">
-							<div class="history__title">{history.title}</div>
-							<div class="history__content">{history.content}</div>
-						</li>
-					{/if}
+				{#each histories as history, idx}
+					<li class="history">
+						<div class="history__color"></div>
+						<div class="history__wrapper">
+							<div class="history__wrapper--title">{history.title}</div>
+							<div class="history__wrapper--date">
+								<img src="{clockIcon}" alt="clock" />{getDate(history)}
+							</div>
+							<div class="history__wrapper--content">{history.content}</div>
+						</div>
+					</li>
 				{/each}
 			</ul>
 		</div>
