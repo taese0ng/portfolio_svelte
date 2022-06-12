@@ -1,14 +1,15 @@
 <script lang="ts">
 	import { onMount } from "svelte";
-	import { historyList } from "@constants/histories";
+	import { historyList } from "~/constants/history";
 	import type { History } from "@interfaces/history";
 
 	const clockIcon = "./images/icons/clock.png";
 
-	let widthSetter: HTMLSpanElement, container: HTMLDivElement;
-	let width = JSON.parse(localStorage.getItem("history_sidebar_width")) || 200,
-		isClicked = false;
-	let histories: Array<History> = [];
+	let widthSetter: HTMLSpanElement,
+		container: HTMLDivElement,
+		width = JSON.parse(localStorage.getItem("history_sidebar_width")) || 200,
+		isClicked = false,
+		histories: Array<History> = [];
 
 	const years = historyList
 		.filter(
@@ -97,7 +98,7 @@
 		<div class="header">히스토리</div>
 		<div class="body">
 			<ul class="histories">
-				{#each histories as history, idx}
+				{#each histories as history}
 					<li class="history">
 						<div class="history__color"></div>
 						<div class="history__wrapper">

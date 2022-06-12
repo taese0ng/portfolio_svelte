@@ -7,6 +7,7 @@ import {
 	Finder,
 	Skill,
 	History,
+	Project,
 } from "@components/Modals";
 
 const iconUrl = "./images/icons";
@@ -19,6 +20,7 @@ export const itemIDs = {
 	finder: "finder",
 	settings: "settings",
 	history: "history",
+	project: "project",
 };
 
 export const itemList: Array<DockItemType> = [
@@ -77,17 +79,29 @@ export const itemList: Array<DockItemType> = [
 		nowOpen: false,
 	},
 	{
-		id: itemIDs.finder,
-		title: "Finder",
+		id: itemIDs.project,
+		title: "프로젝트",
 		isOpen: false,
 		icon: `${iconUrl}/finder.png`,
-		component: Finder,
+		component: Project,
 		zIndex: 0,
 		isAbsoluteHeader: true,
 		width: 800,
 		height: 500,
 		nowOpen: false,
 	},
+	// {
+	// 	id: itemIDs.finder,
+	// 	title: "Finder",
+	// 	isOpen: false,
+	// 	icon: `${iconUrl}/finder.png`,
+	// 	component: Finder,
+	// 	zIndex: 0,
+	// 	isAbsoluteHeader: true,
+	// 	width: 800,
+	// 	height: 500,
+	// 	nowOpen: false,
+	// },
 	{
 		id: itemIDs.settings,
 		title: "환경설정",

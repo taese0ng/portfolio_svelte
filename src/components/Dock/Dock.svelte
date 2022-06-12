@@ -22,6 +22,10 @@
 		}
 	};
 
+	const handleClickSafari = () => {
+		window.open("https://www.google.co.kr");
+	};
+
 	onMount(() => {
 		const elements = document.getElementsByClassName("menu__item__icon");
 
@@ -33,6 +37,19 @@
 
 <div class="container" id="dock">
 	<div class="menu">
+		<div class="menu__item">
+			<div class="menu__item__title">safari</div>
+
+			<div
+				class="menu__item__icon bounce"
+				style="
+				--bgColor:'transparent';
+				"
+				on:click="{handleClickSafari}"
+			>
+				<img src="./images/icons/safari.png" alt="safari" />
+			</div>
+		</div>
 		{#each itemList as item}
 			<div class="menu__item">
 				<div class="menu__item__title">{item.title}</div>
