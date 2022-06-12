@@ -6,6 +6,7 @@ import Finder from "./Finder";
 import Settings from "./Settings";
 import Skill from "./Skill";
 import History from "./History";
+import Project from "./Project";
 
 export {
 	BaseModal,
@@ -16,4 +17,5 @@ export {
 	Finder,
 	Skill,
 	History,
+	Project,
 };
