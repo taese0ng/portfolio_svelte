@@ -11,4 +11,5 @@ export interface DockItemType {
 	height?: number;
 	isAbsoluteHeader?: boolean;
 	nowOpen: boolean;
+	resizeable?: boolean;
 }
