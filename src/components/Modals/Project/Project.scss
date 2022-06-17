@@ -141,10 +141,12 @@
 						gap: 5px;
 					}
 
-					&--skills {
+					&--tags {
 						width: fit-content;
 						display: flex;
-						column-gap: 10px;
+						gap: 10px;
+						white-space: nowrap;
+						flex-wrap: wrap;
 					}
 
 					&--links {

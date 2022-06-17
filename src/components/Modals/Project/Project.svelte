@@ -6,8 +6,8 @@
 	const clockIcon = "./images/icons/clock.png";
 	const githubIcon = "./images/icons/githubBtn.png";
 
-	let widthSetter: HTMLSpanElement,
-		container: HTMLDivElement,
+	let container: HTMLDivElement,
+		bodyWidth: number,
 		cardList: HTMLUListElement,
 		width = JSON.parse(localStorage.getItem("project_sidebar_width")) || 200,
 		isClicked = false,
@@ -28,9 +28,7 @@
 			const sideBarWidth = e.pageX - containerLeft;
 			if (sideBarWidth <= 100) {
 				width = 100;
-			} else if (sideBarWidth >= 450) {
-				width = 450;
-			} else {
+			} else if (sideBarWidth < bodyWidth / 2) {
 				width = sideBarWidth;
 			}
 		}
@@ -42,7 +40,7 @@
 	};
 
 	const handleClickUrl = (url: string) => {
-		window.open(url);
+		window.open(url, "_target");
 	};
 
 	const getDate = (project: Project) => {
@@ -88,12 +86,9 @@
 			</ul>
 		</div>
 
-		<span
-			bind:this="{widthSetter}"
-			on:mousedown="{onMouseDown}"
-			class="widthSetter"></span>
+		<span on:mousedown="{onMouseDown}" class="widthSetter"></span>
 	</div>
-	<div class="bodyWrapper">
+	<div bind:clientWidth="{bodyWidth}" class="bodyWrapper">
 		<div class="header">프로젝트</div>
 		<div class="body">
 			<ul bind:this="{cardList}" class="cards">
@@ -142,10 +137,14 @@
 				<li class="card">
 					<div class="card__color"></div>
 					<div class="card__wrapper">
-						<div class="card__wrapper--title">Project Position</div>
-						<div class="tag">
-							{selectedProject.position}
-						</div>
+						<div class="card__wrapper--title">Project Positions</div>
+						<ul class="card__wrapper--tags">
+							{#each selectedProject.positions as position, idx}
+								<li class="tag">
+									{position}
+								</li>
+							{/each}
+						</ul>
 					</div>
 				</li>
 
@@ -153,7 +152,7 @@
 					<div class="card__color"></div>
 					<div class="card__wrapper">
 						<div class="card__wrapper--title">Skills</div>
-						<ul class="card__wrapper--skills">
+						<ul class="card__wrapper--tags">
 							{#each selectedProject.skills as skill}
 								<li class="tag">{skill}</li>
 							{/each}
