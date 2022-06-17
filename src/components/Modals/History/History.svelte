@@ -5,7 +5,7 @@
 
 	const clockIcon = "./images/icons/clock.png";
 
-	let widthSetter: HTMLSpanElement,
+	let bodyWidth: number,
 		container: HTMLDivElement,
 		width = JSON.parse(localStorage.getItem("history_sidebar_width")) || 200,
 		isClicked = false,
@@ -37,9 +37,7 @@
 			const sideBarWidth = e.pageX - containerLeft;
 			if (sideBarWidth <= 100) {
 				width = 100;
-			} else if (sideBarWidth >= 450) {
-				width = 450;
-			} else {
+			} else if (sideBarWidth < bodyWidth / 2) {
 				width = sideBarWidth;
 			}
 		}
@@ -91,12 +89,9 @@
 			</ul>
 		</div>
 
-		<span
-			bind:this="{widthSetter}"
-			on:mousedown="{onMouseDown}"
-			class="widthSetter"></span>
+		<span on:mousedown="{onMouseDown}" class="widthSetter"></span>
 	</div>
-	<div class="bodyWrapper">
+	<div bind:clientWidth="{bodyWidth}" class="bodyWrapper">
 		<div class="header">히스토리</div>
 		<div class="body">
 			<ul class="histories">
