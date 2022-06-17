@@ -18,69 +18,91 @@
 		isClicked = false,
 		shiftX = 0,
 		shiftY = 0,
-		isResizeObj = { dir: "", top: 0, bottom: 0, right: 0, left: 0 };
+		resizeObj = {
+			dir: "",
+			top: 0,
+			bottom: 0,
+			right: 0,
+			left: 0,
+			height: 0,
+			width: 0,
+		};
 
 	const containerMinWidth = item.width - 100;
 	const containerMinHeight = item.height - 100;
 
+	const saveResizeObj = () => {
+		resizeObj.width = parseFloat(container.style.width);
+		resizeObj.height = parseFloat(container.style.height);
+		resizeObj.top = parseFloat(container.style.top);
+		resizeObj.left = parseFloat(container.style.left);
+
+		sessionStorage.setItem(
+			`${item.id}LocationCoords`,
+			JSON.stringify(resizeObj),
+		);
+	};
+
 	const onMouseMove = (e: MouseEvent) => {
-		const style = container.style;
 		if (isClicked) {
-			style.left = `${e.pageX - shiftX}px`;
-			style.top = `${e.pageY - shiftY}px`;
+			container.style.left = `${e.pageX - shiftX}px`;
+			container.style.top = `${e.pageY - shiftY}px`;
+
+			saveResizeObj();
 		} else if (isResizeClicked) {
-			const height = isResizeObj.bottom - e.pageY;
-			const width = isResizeObj.right - e.pageX;
-			switch (isResizeObj.dir) {
+			const height = resizeObj.bottom - e.pageY;
+			const width = resizeObj.right - e.pageX;
+			switch (resizeObj.dir) {
 				case "top":
 					if (containerMinHeight < height) {
-						style.top = `${e.pageY}px`;
-						style.height = `${height}px`;
+						container.style.top = `${e.pageY}px`;
+						container.style.height = `${height}px`;
 					}
 					break;
 				case "bottom":
-					style.height = `${e.pageY - isResizeObj.top}px`;
+					container.style.height = `${e.pageY - resizeObj.top}px`;
 					break;
 				case "right":
-					style.width = `${e.pageX - isResizeObj.left}px`;
+					container.style.width = `${e.pageX - resizeObj.left}px`;
 					break;
 				case "left":
 					if (containerMinWidth < width) {
-						style.left = `${e.pageX}px`;
-						style.width = `${width}px`;
+						container.style.left = `${e.pageX}px`;
+						container.style.width = `${width}px`;
 					}
 					break;
 				case "rb":
-					style.height = `${e.pageY - isResizeObj.top}px`;
-					style.width = `${e.pageX - isResizeObj.left}px`;
+					container.style.height = `${e.pageY - resizeObj.top}px`;
+					container.style.width = `${e.pageX - resizeObj.left}px`;
 					break;
 				case "lb":
-					style.height = `${e.pageY - isResizeObj.top}px`;
+					container.style.height = `${e.pageY - resizeObj.top}px`;
 					if (containerMinWidth < width) {
-						style.left = `${e.pageX}px`;
-						style.width = `${width}px`;
+						container.style.left = `${e.pageX}px`;
+						container.style.width = `${width}px`;
 					}
 					break;
 				case "rt":
-					style.width = `${e.pageX - isResizeObj.left}px`;
+					container.style.width = `${e.pageX - resizeObj.left}px`;
 					if (containerMinHeight < height) {
-						style.top = `${e.pageY}px`;
-						style.height = `${height}px`;
+						container.style.top = `${e.pageY}px`;
+						container.style.height = `${height}px`;
 					}
 					break;
 				case "lt":
 					if (containerMinHeight < height) {
-						style.top = `${e.pageY}px`;
-						style.height = `${height}px`;
+						container.style.top = `${e.pageY}px`;
+						container.style.height = `${height}px`;
 					}
 					if (containerMinWidth < width) {
-						style.left = `${e.pageX}px`;
-						style.width = `${width}px`;
+						container.style.left = `${e.pageX}px`;
+						container.style.width = `${width}px`;
 					}
 					break;
 				default:
 					break;
 			}
+			saveResizeObj();
 		}
 	};
 
@@ -99,44 +121,40 @@
 		isResizeClicked = true;
 		switch (dir) {
 			case "top":
-				isResizeObj.dir = "top";
-				isResizeObj.bottom = bottomSetter.getBoundingClientRect().top;
-
+				resizeObj.dir = "top";
+				resizeObj.bottom = bottomSetter.getBoundingClientRect().top;
 				break;
 			case "bottom":
-				isResizeObj.dir = "bottom";
-				isResizeObj.top = topSetter.getBoundingClientRect().top;
-
+				resizeObj.dir = "bottom";
+				resizeObj.top = topSetter.getBoundingClientRect().top;
 				break;
 			case "right":
-				isResizeObj.dir = "right";
-				isResizeObj.left = leftSetter.getBoundingClientRect().left;
-
+				resizeObj.dir = "right";
+				resizeObj.left = leftSetter.getBoundingClientRect().left;
 				break;
 			case "left":
-				isResizeObj.dir = "left";
-				isResizeObj.right = rightSetter.getBoundingClientRect().right;
-
+				resizeObj.dir = "left";
+				resizeObj.right = rightSetter.getBoundingClientRect().right;
 				break;
 			case "rb":
-				isResizeObj.dir = "rb";
-				isResizeObj.left = leftSetter.getBoundingClientRect().left;
-				isResizeObj.top = topSetter.getBoundingClientRect().top;
+				resizeObj.dir = "rb";
+				resizeObj.left = leftSetter.getBoundingClientRect().left;
+				resizeObj.top = topSetter.getBoundingClientRect().top;
 				break;
 			case "lb":
-				isResizeObj.dir = "lb";
-				isResizeObj.right = rightSetter.getBoundingClientRect().right;
-				isResizeObj.top = topSetter.getBoundingClientRect().top;
+				resizeObj.dir = "lb";
+				resizeObj.right = rightSetter.getBoundingClientRect().right;
+				resizeObj.top = topSetter.getBoundingClientRect().top;
 				break;
 			case "rt":
-				isResizeObj.dir = "rt";
-				isResizeObj.left = leftSetter.getBoundingClientRect().left;
-				isResizeObj.bottom = bottomSetter.getBoundingClientRect().top;
+				resizeObj.dir = "rt";
+				resizeObj.left = leftSetter.getBoundingClientRect().left;
+				resizeObj.bottom = bottomSetter.getBoundingClientRect().top;
 				break;
 			case "lt":
-				isResizeObj.dir = "lt";
-				isResizeObj.right = rightSetter.getBoundingClientRect().right;
-				isResizeObj.bottom = bottomSetter.getBoundingClientRect().top;
+				resizeObj.dir = "lt";
+				resizeObj.right = rightSetter.getBoundingClientRect().right;
+				resizeObj.bottom = bottomSetter.getBoundingClientRect().top;
 				break;
 			default:
 				break;
@@ -152,6 +170,17 @@
 	};
 
 	onMount(() => {
+		if (sessionStorage.getItem(`${item.id}LocationCoords`)) {
+			resizeObj = JSON.parse(
+				sessionStorage.getItem(`${item.id}LocationCoords`),
+			);
+			container.style.top = `${resizeObj.top}px`;
+			container.style.left = `${resizeObj.left}px`;
+			if (item.resizeable) {
+				container.style.width = `${resizeObj.width}px`;
+				container.style.height = `${resizeObj.height}px`;
+			}
+		}
 		container.style.minWidth = `${containerMinWidth}px`;
 		container.style.minHeight = `${containerMinHeight}px`;
 		window.addEventListener("mousemove", onMouseMove);
