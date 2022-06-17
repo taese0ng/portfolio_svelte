@@ -64,7 +64,6 @@
 
 	onMount(() => {
 		getHistoryList();
-		widthSetter.addEventListener("mousedown", onMouseDown);
 		window.addEventListener("mousemove", onMouseMove);
 		window.addEventListener("mouseup", onMouseUp);
 	});
@@ -92,7 +91,10 @@
 			</ul>
 		</div>
 
-		<span bind:this="{widthSetter}" class="widthSetter"></span>
+		<span
+			bind:this="{widthSetter}"
+			on:mousedown="{onMouseDown}"
+			class="widthSetter"></span>
 	</div>
 	<div class="bodyWrapper">
 		<div class="header">히스토리</div>

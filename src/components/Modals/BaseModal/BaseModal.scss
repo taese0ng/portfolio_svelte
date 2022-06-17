@@ -68,3 +68,69 @@
 		}
 	}
 }
+
+.setter {
+	position: absolute;
+	z-index: $absoluteHeader + 1;
+	background-color: transparent;
+}
+
+.topSetter {
+	top: 0;
+	width: 100%;
+	height: 4px;
+	cursor: n-resize;
+}
+
+.bottomSetter {
+	bottom: 0;
+	width: 100%;
+	height: 4px;
+	cursor: s-resize;
+}
+
+.rightSetter {
+	right: 0;
+	width: 4px;
+	height: 100%;
+	cursor: e-resize;
+}
+
+.leftSetter {
+	left: 0;
+	width: 4px;
+	height: 100%;
+	cursor: w-resize;
+}
+
+.rbSetter {
+	right: 0;
+	bottom: 0;
+	width: 10px;
+	height: 10px;
+	cursor: se-resize;
+}
+
+.lbSetter {
+	left: 0;
+	bottom: 0;
+	width: 10px;
+	height: 10px;
+	cursor: sw-resize;
+}
+
+.rtSetter {
+	right: 0;
+	top: 0;
+	width: 10px;
+	height: 10px;
+	cursor: ne-resize;
+}
+
+.ltSetter {
+	left: 0;
+	top: 0;
+	width: 10px;
+	height: 10px;
+	cursor: nw-resize;
+}

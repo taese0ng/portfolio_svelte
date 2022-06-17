@@ -8,6 +8,7 @@
 
 	let widthSetter: HTMLSpanElement,
 		container: HTMLDivElement,
+		cardList: HTMLUListElement,
 		width = JSON.parse(localStorage.getItem("project_sidebar_width")) || 200,
 		isClicked = false,
 		selectedProject: Project = projectList[0];
@@ -36,6 +37,7 @@
 	};
 
 	const handleClickTitle = (project: Project) => {
+		cardList.scroll({ top: 0, behavior: "smooth" });
 		selectedProject = project;
 	};
 
@@ -59,7 +61,6 @@
 	};
 
 	onMount(() => {
-		widthSetter.addEventListener("mousedown", onMouseDown);
 		window.addEventListener("mousemove", onMouseMove);
 		window.addEventListener("mouseup", onMouseUp);
 	});
@@ -87,12 +88,15 @@
 			</ul>
 		</div>
 
-		<span bind:this="{widthSetter}" class="widthSetter"></span>
+		<span
+			bind:this="{widthSetter}"
+			on:mousedown="{onMouseDown}"
+			class="widthSetter"></span>
 	</div>
 	<div class="bodyWrapper">
 		<div class="header">프로젝트</div>
 		<div class="body">
-			<ul class="cards">
+			<ul bind:this="{cardList}" class="cards">
 				<li class="card">
 					<div class="card__color"></div>
 					<div class="card__wrapper row">

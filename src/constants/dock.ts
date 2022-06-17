@@ -77,6 +77,7 @@ export const itemList: Array<DockItemType> = [
 		width: 800,
 		height: 500,
 		nowOpen: false,
+		resizeable: true,
 	},
 	{
 		id: itemIDs.project,
@@ -89,6 +90,7 @@ export const itemList: Array<DockItemType> = [
 		width: 800,
 		height: 500,
 		nowOpen: false,
+		resizeable: true,
 	},
 	// {
 	// 	id: itemIDs.finder,
