@@ -47,8 +47,6 @@
 		if (isClicked) {
 			container.style.left = `${e.pageX - shiftX}px`;
 			container.style.top = `${e.pageY - shiftY}px`;
-
-			saveResizeObj();
 		} else if (isResizeClicked) {
 			const height = resizeObj.bottom - e.pageY;
 			const width = resizeObj.right - e.pageX;
@@ -102,7 +100,6 @@
 				default:
 					break;
 			}
-			saveResizeObj();
 		}
 	};
 
@@ -115,6 +112,7 @@
 	const onMouseUp = () => {
 		isClicked = false;
 		isResizeClicked = false;
+		saveResizeObj();
 	};
 
 	const onResizeMouseDown = (dir: string) => {
