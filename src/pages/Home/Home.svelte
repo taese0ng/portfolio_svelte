@@ -50,7 +50,12 @@
 		onUpperModal="{handleUpperModal}"
 	/>
 
-	<img class="background-img" src="{$bgImg}" alt="background" />
+	<img
+		class="background-img"
+		src="{$bgImg}"
+		alt="background"
+		draggable="false"
+	/>
 
 	{#each itemList as item}
 		{#if item.isOpen}
