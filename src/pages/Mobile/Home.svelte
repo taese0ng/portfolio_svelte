@@ -1,6 +1,9 @@
 <script lang="ts">
+	import Dock from "@components/Mobile/Dock";
 </script>
 
-<div>MobileHome</div>
+<main>
+	<Dock />
+</main>
 
 <style src="./Home.scss"></style>

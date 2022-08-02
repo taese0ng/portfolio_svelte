@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Router from "svelte-spa-router";
+	import router from "~/router";
 	import { isMobile } from "~/store";
 	import { DesktopHome, MobileHome } from "~/pages";
 
@@ -19,7 +21,7 @@
 
 <svelte:window bind:innerWidth />
 {#if $isMobile}
-	<MobileHome />
+	<Router routes="{router}" />
 {:else}
 	<DesktopHome />
 {/if}
