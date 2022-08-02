@@ -1,4 +1,4 @@
-import Home from "./Home";
+import DesktopHome from "./Desktop";
 import Error from "./Error";
-
-export { Home, Error };
+import MobileHome from "./Mobile";
+export { DesktopHome, Error, MobileHome };

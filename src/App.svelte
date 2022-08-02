@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { isMobile } from "~/store";
-	import { Home, Error } from "~/pages";
+	import { DesktopHome, MobileHome } from "~/pages";
 
 	const stdWidth = 900;
 	let innerWidth = window.innerWidth;
@@ -19,9 +19,9 @@
 
 <svelte:window bind:innerWidth />
 {#if $isMobile}
-	<Error />
+	<MobileHome />
 {:else}
-	<Home />
+	<DesktopHome />
 {/if}
 
 <style>

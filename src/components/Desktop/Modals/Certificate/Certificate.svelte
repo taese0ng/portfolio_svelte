@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { certificateList } from "@constants/certificates";
 	import type { Certificate } from "@interfaces/cerificates";
-	import Popup from "@components/Popup";
+	import Popup from "@components/Desktop/Popup";
 
 	let isOpenPopup = false;
 	let selectedCertificate: Certificate;
