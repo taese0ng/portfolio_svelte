@@ -50,3 +50,11 @@ export const bgImgs: Array<BgImg> = [
 		title: "Leopard",
 	},
 ];
+
+export const mobileImgs: Array<BgImg> = [
+	{
+		src: `${bgUrl}/background_ios16.png`,
+		thumb: `${thumbUrl}/thumb_background_ios16.webp`,
+		title: "ios16",
+	},
+];
