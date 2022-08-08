@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { push } from "svelte-spa-history-router";
-	import type { DockItemType } from "~/interfaces/dock";
+	import type { DockItemType } from "@interfaces/dock";
 
 	export let dockItems: Array<DockItemType>;
 

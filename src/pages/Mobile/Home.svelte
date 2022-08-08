@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Dock from "@components/Mobile/Dock";
 	import Header from "@components/Mobile/Header";
+	import Background from "@components/Mobile/Background";
 	import { mobileImgs } from "@constants/bgSetting";
 	import { itemList, itemIDs } from "@constants/dock";
 
@@ -22,6 +23,8 @@
 <div class="container">
 	<img src="{bgImg}" alt="bgImg" class="bgImg" draggable="false" />
 	<Header />
+
+	<Background items="{backgroundItems}" />
 
 	<Dock dockItems="{dockItems}" />
 </div>
