@@ -11,8 +11,16 @@
 }
 
 .item {
-	background-color: blue;
+	background-color: $gray_60;
 	border-radius: 20px;
 	width: 70px;
 	height: 70px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	img {
+		width: 100%;
+		height: 100%;
+	}
 }

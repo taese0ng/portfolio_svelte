@@ -711,11 +711,6 @@ readdirp@~3.6.0:
   dependencies:
     picomatch "^2.2.1"
 
-regexparam@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/regexparam/-/regexparam-2.0.0.tgz#059476767d5f5f87f735fc7922d133fd1a118c8c"
-  integrity sha512-gJKwd2MVPWHAIFLsaYDZfyKzHNS4o7E/v8YmNf44vmeV2e4YfVoDToTOKTvE7ab68cRJ++kLuEXJBaEeJVt5ow==
-
 require-relative@^0.8.7:
   version "0.8.7"
   resolved "https://registry.yarnpkg.com/require-relative/-/require-relative-0.8.7.tgz#7999539fc9e047a37928fa196f8e1563dabd36de"
@@ -969,12 +964,10 @@ svelte-preprocess@^4.0.0:
     sorcery "^0.10.0"
     strip-indent "^3.0.0"
 
-svelte-spa-router@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/svelte-spa-router/-/svelte-spa-router-3.2.0.tgz#fae3311d292451236cb57131262406cf312b15ee"
-  integrity sha512-igemo5Vs82TGBBw+DjWt6qKameXYzNs6aDXcTxou5XbEvOjiRcAM6MLkdVRCatn6u8r42dE99bt/br7T4qe/AQ==
-  dependencies:
-    regexparam "2.0.0"
+svelte-spa-history-router@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/svelte-spa-history-router/-/svelte-spa-history-router-2.1.0.tgz#23947db3b2e1f3a3de881a266ed062532724e5a8"
+  integrity sha512-aWhYRSdVdaITC3SaWXmXAbyMBEYXGq9B2FgzFpCxMwmRXOM1nBpfF9nuLKL/Cod0v5ZcScncLyXbc995l15PZQ==
 
 svelte@^3.0.0:
   version "3.46.4"

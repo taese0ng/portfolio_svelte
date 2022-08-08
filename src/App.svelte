@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Router from "svelte-spa-router";
+	import { Router } from "svelte-spa-history-router";
 	import router from "~/router";
 	import { isMobile } from "~/store";
 	import { DesktopHome, MobileHome } from "~/pages";

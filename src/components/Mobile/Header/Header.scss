@@ -1,0 +1,12 @@
+.container {
+	width: 100%;
+	background-color: $white_40per;
+	backdrop-filter: blur(20px);
+}
+
+.wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 5px 10px;
+}
