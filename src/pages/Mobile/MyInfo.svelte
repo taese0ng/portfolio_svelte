@@ -1,6 +1,9 @@
 <script lang="ts">
+	import Layout from "@components/Mobile/Layout";
 </script>
 
-<div>myInfo</div>
+<Layout>
+	<div class="wrapper">myInfo</div>
+</Layout>
 
 <style src="./MyInfo.scss"></style>

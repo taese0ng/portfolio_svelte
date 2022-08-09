@@ -45,3 +45,21 @@
 		background-color: $white;
 	}
 }
+
+.blackMode {
+	.percentage {
+		color: $black;
+	}
+
+	.batteryOuter {
+		border: 1px solid $black;
+
+		.batteryInner {
+			background-color: $black;
+		}
+
+		&::before {
+			background-color: $black;
+		}
+	}
+}

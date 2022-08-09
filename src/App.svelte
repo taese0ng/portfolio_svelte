@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { Router } from "svelte-spa-history-router";
+	import Router from "svelte-spa-router";
 	import router from "~/router";
 	import { isMobile } from "~/store";
-	import { DesktopHome, MobileHome } from "~/pages";
+	import { DesktopHome } from "~/pages";
 
 	const stdWidth = 900;
 	let innerWidth = window.innerWidth;
@@ -28,8 +28,14 @@
 
 <style>
 	:global(body) {
+		position: unset;
 		margin: 0;
 		padding: 0;
 		overflow: hidden;
+	}
+
+	:global(main) {
+		margin: 0;
+		padding: 0;
 	}
 </style>

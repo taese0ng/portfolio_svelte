@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount, onDestroy } from "svelte";
 
+	export let blackMode = false;
 	let hour = "",
 		min = "";
 
@@ -25,6 +26,6 @@
 	});
 </script>
 
-<div class="time">{hour}:{min}</div>
+<div class="time" class:blackMode>{hour}:{min}</div>
 
 <style src="./Time.scss"></style>

@@ -1,9 +1,21 @@
-import { Home, MyInfo, History, Setting } from "~/pages/Mobile";
-import { itemIDs } from "@constants/dock";
+import {
+	Home,
+	MyInfo,
+	History,
+	Setting,
+	Award,
+	Certificate,
+	Project,
+	Skill,
+} from "~/pages/Mobile";
 
-export default [
-	{ path: "/", component: Home },
-	{ path: `/${itemIDs.myInfo}`, component: MyInfo },
-	{ path: `/${itemIDs.history}`, component: History },
-	{ path: `/${itemIDs.settings}`, component: Setting },
-];
+export default {
+	"/": Home,
+	"/myInfo": MyInfo,
+	"/history": History,
+	"/settings": Setting,
+	"/award": Award,
+	"/certificate": Certificate,
+	"/project": Project,
+	"/skill": Skill,
+};

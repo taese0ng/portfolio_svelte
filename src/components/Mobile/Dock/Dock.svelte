@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { push } from "svelte-spa-history-router";
+	import { push } from "svelte-spa-router";
 	import type { DockItemType } from "@interfaces/dock";
 
 	export let dockItems: Array<DockItemType>;
@@ -15,7 +15,7 @@
 
 <div class="container">
 	<div class="item" on:click="{handleClickSafari}">
-		<img src="./images/icons/safari.png" alt="safari" />
+		<img draggable="false" src="./images/icons/safari.png" alt="safari" />
 	</div>
 
 	{#each dockItems as item}
@@ -25,7 +25,7 @@
 				handleClickItem(item);
 			}}"
 		>
-			<img src="{item.icon}" alt="{item.title}" />
+			<img draggable="false" src="{item.icon}" alt="{item.title}" />
 		</div>
 	{/each}
 </div>

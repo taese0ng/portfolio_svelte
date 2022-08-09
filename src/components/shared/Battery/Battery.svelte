@@ -3,6 +3,7 @@
 	import { onMount } from "svelte";
 	export let onPercent = false;
 
+	export let blackMode = false;
 	let isSupport = false;
 	let batteryPercent = 0;
 
@@ -31,7 +32,7 @@
 </script>
 
 {#if isSupport}
-	<div class="container">
+	<div class="container" class:blackMode>
 		{#if onPercent}
 			<div class="percentage" class:isMobile>{batteryPercent.toFixed()}%</div>
 		{/if}

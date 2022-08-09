@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Dock from "@components/Mobile/Dock";
-	import Header from "@components/Mobile/Header";
+	import Layout from "@components/Mobile/Layout";
 	import Background from "@components/Mobile/Background";
 	import { mobileImgs } from "@constants/bgSetting";
 	import { itemList, itemIDs } from "@constants/dock";
@@ -20,13 +20,14 @@
 	});
 </script>
 
-<div class="container">
-	<img src="{bgImg}" alt="bgImg" class="bgImg" draggable="false" />
-	<Header />
+<Layout>
+	<div class="wrapper">
+		<img src="{bgImg}" alt="bgImg" class="bgImg" draggable="false" />
 
-	<Background items="{backgroundItems}" />
+		<Background items="{backgroundItems}" />
 
-	<Dock dockItems="{dockItems}" />
-</div>
+		<Dock dockItems="{dockItems}" />
+	</div>
+</Layout>
 
 <style src="./Home.scss"></style>
