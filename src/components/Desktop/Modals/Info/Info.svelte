@@ -1,21 +1,14 @@
 <script lang="ts">
-	const iconUrl = "./images/icons";
-	const imgUrl = `${iconUrl}/profileImg.jpeg`,
-		calendarImg = `${iconUrl}/calendar.png`,
-		githubImg = `${iconUrl}/github.png`,
-		emailImg = `${iconUrl}/email.png`,
-		velogImg = `${iconUrl}/velog.png`,
-		instagramImg = `${iconUrl}/instagram.png`;
+	import { contents, profileImg } from "@constants/info";
 
-	const githubHref = "https://github.com/taese0ng",
-		mainHref = "mailto:taese0ng@naver.com",
-		velogHref = "https://velog.io/@taese0ng",
-		instagramHref = "https://www.instagram.com/taese0_0ng/";
+	const handleClickContent = (link: string) => {
+		if (link) window.open(link);
+	};
 </script>
 
 <div class="container">
 	<div class="profile__img">
-		<img src="{imgUrl}" alt="profileImg" />
+		<img src="{profileImg}" alt="profileImg" />
 	</div>
 
 	<ul class="profile__contents">
@@ -23,42 +16,19 @@
 			<div>김태성</div>
 		</li>
 
-		<li>
-			<img class="profile__contents--icon" src="{calendarImg}" alt="calendar" />
-			<span>1996-08-26</span>
-		</li>
-
-		<li>
-			<a href="{githubHref}" target="_blank">
-				<img class="profile__contents--icon" src="{githubImg}" alt="github" />
-				<span>GitHub</span>
-			</a>
-		</li>
-
-		<li>
-			<a href="{mainHref}" target="_top">
-				<img class="profile__contents--icon" src="{emailImg}" alt="email" />
-				<span>Email</span>
-			</a>
-		</li>
-
-		<li>
-			<a href="{velogHref}" target="_blank">
-				<img class="profile__contents--icon" src="{velogImg}" alt="velog" />
-				<span>Velog</span>
-			</a>
-		</li>
-
-		<li>
-			<a href="{instagramHref}" target="_blank">
+		{#each contents as content}
+			<li
+				class:link="{content.link}"
+				on:click="{() => handleClickContent(content.link)}"
+			>
 				<img
 					class="profile__contents--icon"
-					src="{instagramImg}"
-					alt="instagram"
+					src="{content.icon}"
+					alt="{content.id}"
 				/>
-				<span>Instagram</span>
-			</a>
-		</li>
+				<span>{content.text}</span>
+			</li>
+		{/each}
 	</ul>
 </div>
 

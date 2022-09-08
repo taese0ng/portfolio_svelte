@@ -44,9 +44,9 @@
 		display: flex;
 		align-items: center;
 
-		a {
-			display: flex;
-			align-items: center;
+		&.link {
+			color: $blue_20;
+			cursor: pointer;
 		}
 	}
 

@@ -11,6 +11,7 @@
 .wrapper {
 	height: calc(100% - 30px);
 	width: 100%;
+	overflow: scroll;
 
 	&.isApp {
 		height: calc(100% - 70px);
