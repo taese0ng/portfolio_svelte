@@ -1,9 +1,9 @@
 <script lang="ts">
+	import { isMobile } from "~/store";
 	import { onMount } from "svelte";
-	import isBrouserCheck from "@utils/isBrowserCheck";
 	export let onPercent = false;
 
-	const batteryManagerAbleBrowsers = ["firfox", "Chrome", "Opera"];
+	export let blackMode = false;
 	let isSupport = false;
 	let batteryPercent = 0;
 
@@ -24,7 +24,7 @@
 	};
 
 	onMount(() => {
-		if (batteryManagerAbleBrowsers.includes(isBrouserCheck())) {
+		if (navigator.getBattery) {
 			isSupport = true;
 			updateBatteryStatus();
 		}
@@ -32,12 +32,12 @@
 </script>
 
 {#if isSupport}
-	<div class="container">
+	<div class="container" class:blackMode>
 		{#if onPercent}
-			<div class="percentage">{batteryPercent.toFixed()}%</div>
+			<div class="percentage" class:isMobile>{batteryPercent.toFixed()}%</div>
 		{/if}
 
-		<div class="batteryOuter">
+		<div class="batteryOuter" class:isMobile>
 			<div class="batteryInner"></div>
 		</div>
 	</div>

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Calendar from "@components/Header/Calendar";
-	import Time from "@components/Header/Time";
-	import Battery from "@components/Header/Battery";
+	import Calendar from "@components/Desktop/Header/Calendar";
+	import Time from "@components/Desktop/Header/Time";
+	import Battery from "@components/shared/Battery";
 	import type { DockItemType } from "@interfaces/dock";
 	import { itemIDs } from "@constants/dock";
 

@@ -8,7 +8,7 @@ import {
 	Skill,
 	History,
 	Project,
-} from "@components/Modals";
+} from "@components/Desktop/Modals";
 
 const iconUrl = "./images/icons";
 

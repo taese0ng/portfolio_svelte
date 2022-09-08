@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { bgImg } from "~/store";
 	import type { DockItemType } from "@interfaces/dock";
-	import Header from "@components/Header";
-	import Dock from "@components/Dock";
-	import { BaseModal } from "@components/Modals";
+	import Header from "@components/Desktop/Header";
+	import Dock from "@components/Desktop/Dock";
+	import { BaseModal } from "@components/Desktop/Modals";
 	import { itemList } from "@constants/dock";
 
 	const handleOpenModal = (id: string, nowOpen = false) => {

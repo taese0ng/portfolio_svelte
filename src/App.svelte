@@ -1,6 +1,8 @@
 <script lang="ts">
+	import Router from "svelte-spa-router";
+	import router from "~/router";
 	import { isMobile } from "~/store";
-	import { Home, Error } from "~/pages";
+	import { DesktopHome } from "~/pages";
 
 	const stdWidth = 900;
 	let innerWidth = window.innerWidth;
@@ -19,15 +21,21 @@
 
 <svelte:window bind:innerWidth />
 {#if $isMobile}
-	<Error />
+	<Router routes="{router}" />
 {:else}
-	<Home />
+	<DesktopHome />
 {/if}
 
 <style>
 	:global(body) {
+		position: unset;
 		margin: 0;
 		padding: 0;
 		overflow: hidden;
+	}
+
+	:global(main) {
+		margin: 0;
+		padding: 0;
 	}
 </style>

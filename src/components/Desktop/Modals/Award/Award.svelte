@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { awardList } from "@constants/awards";
 	import type { Award } from "@interfaces/awards";
-	import Popup from "@components/Popup";
+	import Popup from "@components/Desktop/Popup";
 
 	let isOpenPopup = false;
 	let selectedAward: Award;

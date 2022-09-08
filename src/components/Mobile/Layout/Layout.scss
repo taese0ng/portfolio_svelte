@@ -1,0 +1,46 @@
+.container {
+	margin: 0;
+	padding: 30px 0 0 0;
+	height: 100%;
+	width: 100vw;
+	&.isApp {
+		background-color: $gray-30;
+	}
+}
+
+.wrapper {
+	height: calc(100% - 30px);
+	width: 100%;
+	overflow: scroll;
+
+	&.isApp {
+		height: calc(100% - 70px);
+	}
+}
+
+.appHeader {
+	width: 100%;
+	height: 40px;
+	display: flex;
+	align-items: center;
+
+	.title {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		font-size: 17px;
+		color: $black;
+		font-weight: 500;
+	}
+	.backBtn {
+		width: 50px;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		img {
+			height: calc(100% - 15px);
+		}
+	}
+}

@@ -1,0 +1,26 @@
+.container {
+	background: $white_70per;
+	backdrop-filter: blur(20px);
+	border: 1px solid $white_40per;
+	padding: 13px 10px;
+	border-radius: 20px;
+	display: flex;
+	gap: 20px;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.item {
+	background-color: $gray_60;
+	border-radius: 20px;
+	width: 70px;
+	height: 70px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	img {
+		width: 100%;
+		height: 100%;
+	}
+}
