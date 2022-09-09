@@ -1,5 +1,9 @@
-<script lang="ts"></script>
+<script lang="ts">
+	import Layout from "@components/Mobile/Layout";
+</script>
 
-<div>Project</div>
+<Layout>
+	<div>Project</div>
+</Layout>
 
 <style src="./Project.scss"></style>

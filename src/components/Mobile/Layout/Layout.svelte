@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Header from "@components/Mobile/Header";
-	import { location, pop } from "svelte-spa-router";
+	import { location, pop, querystring, replace } from "svelte-spa-router";
 	import { itemList } from "@constants/dock";
 
 	const backBtnIcon = "./images/icons/backBtn.png";
@@ -21,7 +21,11 @@
 	};
 
 	const handleClickBack = () => {
-		pop();
+		if ($querystring.length === 0) {
+			replace("/");
+		} else {
+			pop();
+		}
 	};
 
 	checkLocation();

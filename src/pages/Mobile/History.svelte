@@ -1,5 +1,9 @@
-<script lang="ts"></script>
+<script lang="ts">
+	import Layout from "@components/Mobile/Layout";
+</script>
 
-<div>History</div>
+<Layout>
+	<div>History</div>
+</Layout>
 
 <style src="./History.scss"></style>
