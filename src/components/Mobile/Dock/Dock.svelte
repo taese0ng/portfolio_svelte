@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { push } from "svelte-spa-router";
+	import { replace } from "svelte-spa-router";
 	import type { DockItemType } from "@interfaces/dock";
 
 	export let dockItems: Array<DockItemType>;
@@ -9,7 +9,7 @@
 	};
 
 	const handleClickItem = (item: DockItemType) => {
-		push(`/${item.id}`);
+		replace(`/${item.id}`);
 	};
 </script>
 

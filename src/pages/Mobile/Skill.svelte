@@ -1,5 +1,9 @@
-<script lang="ts"></script>
+<script lang="ts">
+	import Layout from "@components/Mobile/Layout";
+</script>
 
-<div>skill</div>
+<Layout>
+	<div>skill</div>
+</Layout>
 
 <style src="./Skill.scss"></style>

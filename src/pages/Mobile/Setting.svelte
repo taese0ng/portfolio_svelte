@@ -1,5 +1,9 @@
-<script lang="ts"></script>
+<script lang="ts">
+	import Layout from "@components/Mobile/Layout";
+</script>
 
-<div>setting</div>
+<Layout>
+	<div>setting</div>
+</Layout>
 
 <style src="./Setting.scss"></style>

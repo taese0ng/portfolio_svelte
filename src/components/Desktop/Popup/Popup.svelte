@@ -4,11 +4,11 @@
 	const header: HTMLDivElement = document.querySelector("#header");
 	const closeIcon = "./images/icons/closeIcon.png";
 
-	export let onClosePopup: () => void;
+	export let onClosePopup: (e?: MouseEvent) => void;
 	export let hasCloseBtn: boolean = false;
 
-	const handleClosePopup = () => {
-		onClosePopup();
+	const handleClosePopup = (e?: MouseEvent) => {
+		onClosePopup(e);
 	};
 
 	const handleClickSlot = (e: MouseEvent) => {
@@ -16,13 +16,17 @@
 	};
 
 	onMount(() => {
-		header.style.zIndex = "0";
-		dock.style.zIndex = "-1";
+		if (header && dock) {
+			header.style.zIndex = "0";
+			dock.style.zIndex = "-1";
+		}
 	});
 
 	onDestroy(() => {
-		header.style.zIndex = "70000";
-		dock.style.zIndex = "70000";
+		if (header && dock) {
+			header.style.zIndex = "70000";
+			dock.style.zIndex = "70000";
+		}
 	});
 </script>
 
