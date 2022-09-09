@@ -1,16 +1,17 @@
 <script lang="ts">
 	import { beforeUpdate } from "svelte";
-	import { push, pop, replace, querystring } from "svelte-spa-router";
+	import { replace, querystring } from "svelte-spa-router";
 	import Layout from "@components/Mobile/Layout";
 	import Popup from "@components/Desktop/Popup";
 	import { awardList } from "@constants/awards";
 	import type { Award } from "@interfaces/awards";
 
+	const param = "id";
 	let selectedAward: Award | null = null;
 	let isOpenPopup = false;
 
 	const handleClickAward = (award: Award) => {
-		replace(`/award?popup=${award.title}`);
+		replace(`/award?${param}=${award.id}`);
 	};
 
 	const handleClosePopup = () => {
@@ -18,12 +19,11 @@
 	};
 
 	beforeUpdate(() => {
-		const param = "popup";
 		const searchParams = new URLSearchParams($querystring);
 		const hasParams = searchParams.has(param);
 
 		selectedAward = awardList.find(
-			(award) => award.title === searchParams.get(param),
+			(award) => award.id === searchParams.get(param),
 		);
 
 		if (selectedAward && hasParams) {
