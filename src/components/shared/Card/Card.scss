@@ -1,0 +1,16 @@
+.card {
+	position: relative;
+	overflow: hidden;
+	border-radius: 10px;
+	background-color: $white;
+	padding: 10px 10px 10px 20px;
+
+	&__label {
+		position: absolute;
+		height: 100%;
+		width: 8px;
+		top: 0;
+		left: 0;
+		background-color: $blue_20;
+	}
+}

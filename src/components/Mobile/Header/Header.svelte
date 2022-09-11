@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Time from "./Time";
-	import Battery from "@components/shared/Battery/Battery.svelte";
+	import { Battery } from "@components/shared";
 
 	export let blackMode = false;
 </script>

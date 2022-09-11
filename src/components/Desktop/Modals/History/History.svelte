@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from "svelte";
+	import { Card } from "@components/shared";
 	import { historyList } from "~/constants/history";
 	import type { History } from "@interfaces/history";
 
@@ -96,15 +97,16 @@
 		<div class="body">
 			<ul class="histories">
 				{#each histories as history}
-					<li class="history">
-						<div class="history__color"></div>
-						<div class="history__wrapper">
-							<div class="history__wrapper--title">{history.title}</div>
-							<div class="history__wrapper--date">
-								<img src="{clockIcon}" alt="clock" />{getDate(history)}
+					<li>
+						<Card>
+							<div class="history__wrapper">
+								<div class="history__wrapper--title">{history.title}</div>
+								<div class="history__wrapper--date">
+									<img src="{clockIcon}" alt="clock" />{getDate(history)}
+								</div>
+								<div class="history__wrapper--content">{history.content}</div>
 							</div>
-							<div class="history__wrapper--content">{history.content}</div>
-						</div>
+						</Card>
 					</li>
 				{/each}
 			</ul>

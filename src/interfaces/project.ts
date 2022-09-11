@@ -3,7 +3,7 @@ export interface Project {
 	startAt: Date; // 프로젝트 시작 날짜
 	endAt: Date; // 프로젝트 끝낸 날짜
 	title: string; // 프로젝트명
-	subTitle?: string;
+	subTitle: string;
 	positions: string[]; // 프로젝트에서 맡은 역할
 	skills: string[]; //프로젝트 기술스택
 	explanations: string[]; // 프로젝트 설명

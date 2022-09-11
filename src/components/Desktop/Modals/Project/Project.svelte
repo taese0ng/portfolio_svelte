@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from "svelte";
+	import { Card } from "@components/shared";
 	import { projectList } from "~/constants/project";
 	import type { Project } from "@interfaces/project";
 
@@ -92,96 +93,103 @@
 		<div class="header">프로젝트</div>
 		<div class="body">
 			<ul bind:this="{cardList}" class="cards">
-				<li class="card">
-					<div class="card__color"></div>
-					<div class="card__wrapper row">
-						<img
-							class="card__wrapper--icon"
-							src="{selectedProject.icon}"
-							alt="projectIcon"
-						/>
-						<div>
-							<div class="card__wrapper--title">
-								{selectedProject.title}
-								<div class="card__wrapper--subTitle">
-									{selectedProject.subTitle}
+				<li>
+					<Card>
+						<div class="card__wrapper row">
+							<img
+								class="card__wrapper--icon"
+								src="{selectedProject.icon}"
+								alt="projectIcon"
+							/>
+							<div>
+								<div class="card__wrapper--title">
+									{selectedProject.title}
+									<div class="card__wrapper--subTitle">
+										{selectedProject.subTitle}
+									</div>
+								</div>
+
+								<div class="card__wrapper--date">
+									<img src="{clockIcon}" alt="clock" />{getDate(
+										selectedProject,
+									)}
 								</div>
 							</div>
 
-							<div class="card__wrapper--date">
-								<img src="{clockIcon}" alt="clock" />{getDate(selectedProject)}
-							</div>
+							<ul class="card__wrapper--links">
+								{#if selectedProject.githubUrl}
+									<li
+										class="card__wrapper--github"
+										on:click="{() => handleClickUrl(selectedProject.githubUrl)}"
+									>
+										<img src="{githubIcon}" alt="githubBtn" />
+									</li>
+								{/if}
+								{#if selectedProject.url}
+									<li
+										class="card__wrapper--url"
+										on:click="{() => handleClickUrl(selectedProject.url)}"
+									>
+										구경하기
+									</li>
+								{/if}
+							</ul>
 						</div>
-
-						<ul class="card__wrapper--links">
-							{#if selectedProject.githubUrl}
-								<li
-									class="card__wrapper--github"
-									on:click="{() => handleClickUrl(selectedProject.githubUrl)}"
-								>
-									<img src="{githubIcon}" alt="githubBtn" />
-								</li>
-							{/if}
-							{#if selectedProject.url}
-								<li
-									class="card__wrapper--url"
-									on:click="{() => handleClickUrl(selectedProject.url)}"
-								>
-									구경하기
-								</li>
-							{/if}
-						</ul>
-					</div>
+					</Card>
 				</li>
 
-				<li class="card">
-					<div class="card__color"></div>
-					<div class="card__wrapper">
-						<div class="card__wrapper--title">Project Positions</div>
-						<ul class="card__wrapper--tags">
-							{#each selectedProject.positions as position, idx}
-								<li class="tag">
-									{position}
-								</li>
-							{/each}
-						</ul>
-					</div>
+				<li>
+					<Card>
+						<div class="card__wrapper">
+							<div class="card__wrapper--title">Project Positions</div>
+							<ul class="card__wrapper--tags">
+								{#each selectedProject.positions as position, idx}
+									<li class="tag">
+										{position}
+									</li>
+								{/each}
+							</ul>
+						</div>
+					</Card>
 				</li>
 
-				<li class="card">
-					<div class="card__color"></div>
-					<div class="card__wrapper">
-						<div class="card__wrapper--title">Skills</div>
-						<ul class="card__wrapper--tags">
-							{#each selectedProject.skills as skill}
-								<li class="tag">{skill}</li>
-							{/each}
-						</ul>
-					</div>
+				<li>
+					<Card>
+						<div class="card__wrapper">
+							<div class="card__wrapper--title">Skills</div>
+							<ul class="card__wrapper--tags">
+								{#each selectedProject.skills as skill}
+									<li class="tag">{skill}</li>
+								{/each}
+							</ul>
+						</div>
+					</Card>
 				</li>
 
-				<li class="card">
-					<div class="card__color"></div>
-					<div class="card__wrapper">
-						<div class="card__wrapper--title">Explanation</div>
-						<ul class="card__wrapper--contents">
-							{#each selectedProject.explanations as explanation}
-								<li>⦁ {explanation}</li>
-							{/each}
-						</ul>
-					</div>
+				<li>
+					<Card>
+						<div class="card__wrapper">
+							<div class="card__wrapper--title">Explanation</div>
+							<ul class="card__wrapper--contents">
+								{#each selectedProject.explanations as explanation}
+									<li>⦁ {explanation}</li>
+								{/each}
+							</ul>
+						</div>
+					</Card>
 				</li>
 
-				<li class="card">
-					<div class="card__color"></div>
-					<div class="card__wrapper">
-						<div class="card__wrapper--title">Images</div>
-						<ul class="card__wrapper--images">
-							{#each selectedProject.imgs as img}
-								<li><img src="{img}" alt="{img}" /></li>
-							{/each}
-						</ul>
-					</div>
+				<li>
+					<Card>
+						<div class="card__wrapper">
+							<div class="card__wrapper--title">Images</div>
+							<ul class="card__wrapper--images">
+								{#each selectedProject.imgs as img}
+									<li><img src="{img}" alt="{img}" /></li>
+								{/each}
+							</ul>
+						</div>
+					</Card>
 				</li>
 			</ul>
 		</div>

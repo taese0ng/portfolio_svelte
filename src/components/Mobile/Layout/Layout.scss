@@ -12,7 +12,7 @@
 .wrapper {
 	height: 100%;
 	width: 100%;
-	overflow: scroll;
+	overflow: auto;
 
 	&.isApp {
 		height: calc(100% - 40px);

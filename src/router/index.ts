@@ -18,6 +18,6 @@ export default {
 	"/award": Awards,
 	"/certificate": Certificate,
 	"/projects": Projects,
-	"/projects/:title": ProjectDetail,
+	"/projects/:id": ProjectDetail,
 	"/skill": Skills,
 };

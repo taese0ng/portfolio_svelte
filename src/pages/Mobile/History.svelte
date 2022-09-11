@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Layout from "@components/Mobile/Layout";
+	import { Card } from "@components/shared";
 	import type { History } from "@interfaces/history";
 	import { historyList } from "@constants/history";
 
@@ -58,14 +59,15 @@
 				>
 					{#each getHistoryContents(year) as history}
 						<li class="histories__item">
-							<div class="histories__item--label"></div>
-							<div class="histories__item--title">{history.title}</div>
-							<div class="histories__item--date">
-								<img src="{clockIcon}" alt="clock" />{getDate(history)}
-							</div>
-							<div class="histories__item--content">
-								{history.content}
-							</div>
+							<Card>
+								<div class="histories__item--title">{history.title}</div>
+								<div class="histories__item--date">
+									<img src="{clockIcon}" alt="clock" />{getDate(history)}
+								</div>
+								<div class="histories__item--content">
+									{history.content}
+								</div>
+							</Card>
 						</li>
 					{/each}
 				</ul>

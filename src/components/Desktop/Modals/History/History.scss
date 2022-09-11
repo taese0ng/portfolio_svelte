@@ -72,54 +72,37 @@
 		.histories {
 			height: 100%;
 			overflow: auto;
-			.history {
-				position: relative;
-				overflow: hidden;
-				display: flex;
-				margin: 20px 10px;
-				padding: 10px;
-				background-color: $white;
-				border-radius: 10px;
+			display: flex;
+			flex-direction: column;
+			padding: 15px;
+			gap: 15px;
 
-				&__color {
-					position: absolute;
-					left: 0;
-					top: 0;
-					background-color: $blue_20;
-					width: 9px;
-					height: 100%;
+			.history__wrapper {
+				&--title {
+					font-size: 22px;
+					font-weight: 600;
 				}
-				&__wrapper {
-					margin-left: 10px;
-					width: calc(100% - 30px);
 
-					&--title {
-						font-size: 22px;
-						font-weight: 600;
+				&--date {
+					color: $gray_70per;
+					margin: 5px 0 10px 0;
+					display: flex;
+					align-items: center;
+
+					img {
+						width: 15px;
+						height: 15px;
+						margin-right: 4px;
 					}
+				}
 
-					&--date {
-						color: $gray_70per;
-						margin: 5px 0 10px 0;
-						display: flex;
-						align-items: center;
-
-						img {
-							width: 15px;
-							height: 15px;
-							margin-right: 4px;
-						}
-					}
-
-					&--content {
-						background-color: $gray_10per;
-						width: 100%;
-						padding: 10px;
-						border-radius: 5px;
-						font-size: 16px;
-						word-break: keep-all;
-						line-height: 25px;
-					}
+				&--content {
+					background-color: $gray_10per;
+					padding: 10px;
+					border-radius: 5px;
+					font-size: 16px;
+					word-break: keep-all;
+					line-height: 25px;
 				}
 			}
 		}
