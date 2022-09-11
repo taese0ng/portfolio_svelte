@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount } from "svelte";
+	import { afterUpdate } from "svelte";
 	import { replace } from "svelte-spa-router";
 	import Layout from "@components/Mobile/Layout";
 	import { Card } from "@components/shared";
@@ -11,9 +11,7 @@
 
 	export let params = { id: "" };
 	let hasLink = false;
-	const project: Project = projectList.find(
-		(project: Project) => project.id === params.id,
-	);
+	let project: Project | null = null;
 
 	const getDate = () => {
 		const startAt = project.startAt;
@@ -34,7 +32,8 @@
 		window.open(url, "_target");
 	};
 
-	onMount(() => {
+	afterUpdate(() => {
+		project = projectList.find((project: Project) => project.id === params.id);
 		if (!project) {
 			replace("/projects");
 		} else {
