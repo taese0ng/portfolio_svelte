@@ -5,6 +5,6 @@
 	console.log("test:", params.title);
 </script>
 
-<Layout title="">
+<Layout title="{params.title}">
 	<div>test</div>
 </Layout>

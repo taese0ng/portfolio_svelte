@@ -20,7 +20,7 @@ export const itemIDs = {
 	finder: "finder",
 	settings: "settings",
 	history: "history",
-	project: "project",
+	projects: "projects",
 };
 
 export const itemList: Array<DockItemType> = [
@@ -80,7 +80,7 @@ export const itemList: Array<DockItemType> = [
 		resizeable: true,
 	},
 	{
-		id: itemIDs.project,
+		id: itemIDs.projects,
 		title: "프로젝트",
 		isOpen: false,
 		icon: `${iconUrl}/finder.png`,

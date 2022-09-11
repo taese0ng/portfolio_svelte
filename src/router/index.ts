@@ -17,7 +17,7 @@ export default {
 	"/settings": Setting,
 	"/award": Awards,
 	"/certificate": Certificate,
-	"/project": Projects,
-	"/project/:title": ProjectDetail,
+	"/projects": Projects,
+	"/projects/:title": ProjectDetail,
 	"/skill": Skills,
 };

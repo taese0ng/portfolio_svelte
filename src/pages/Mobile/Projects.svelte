@@ -2,17 +2,19 @@
 	import Layout from "@components/Mobile/Layout";
 	import { replace } from "svelte-spa-router";
 	import { projectList } from "@constants/project";
-	import type { Project } from "@interfaces/project";
 
-	const handleClickProject = (project: Project) => {
-		console.log(project);
+	const handleClickProject = (projectTitle: string) => {
+		replace(`/projects/${projectTitle}`);
 	};
 </script>
 
 <Layout title="프로젝트">
 	<ul class="projects">
 		{#each projectList as project}
-			<li class="projects__item" on:click="{() => handleClickProject(project)}">
+			<li
+				class="projects__item"
+				on:click="{() => handleClickProject(project.title)}"
+			>
 				<img
 					class="projects__item--icon"
 					src="{project.icon}"

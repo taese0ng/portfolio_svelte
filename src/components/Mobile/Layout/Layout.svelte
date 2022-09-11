@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Header from "@components/Mobile/Header";
-	import { location, pop, querystring, replace } from "svelte-spa-router";
+	import { location, querystring, replace } from "svelte-spa-router";
 
 	export let title = "";
 
@@ -15,11 +15,13 @@
 	};
 
 	const handleClickBack = () => {
-		if ($querystring.length === 0) {
-			replace("/");
-		} else {
-			pop();
-		}
+		const locations = $location.split("/").filter((i: string) => i.length > 0);
+		const backLocation =
+			$querystring.length > 0
+				? locations.splice(0, locations.length).join("/")
+				: locations.splice(0, locations.length - 1).join("/");
+
+		replace(`/${backLocation}`);
 	};
 
 	checkLocation();
