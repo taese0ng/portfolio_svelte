@@ -41,7 +41,7 @@
 	};
 </script>
 
-<Layout>
+<Layout title="히스토리">
 	<ul class="wrapper">
 		{#each years as year}
 			<li class="item__wrapper">

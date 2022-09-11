@@ -3,7 +3,7 @@
 	import { skillList } from "@constants/skills";
 </script>
 
-<Layout>
+<Layout title="기술스택">
 	<ul class="skills">
 		{#each skillList as skill}
 			<li class="skills__item">
@@ -13,4 +13,4 @@
 	</ul>
 </Layout>
 
-<style src="./Skill.scss"></style>
+<style src="./Skills.scss"></style>

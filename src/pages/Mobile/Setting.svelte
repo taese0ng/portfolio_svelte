@@ -2,7 +2,7 @@
 	import Layout from "@components/Mobile/Layout";
 </script>
 
-<Layout>
+<Layout title="환경설정">
 	<div>setting</div>
 </Layout>
 

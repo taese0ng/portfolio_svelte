@@ -36,7 +36,7 @@
 	});
 </script>
 
-<Layout>
+<Layout title="수상경력">
 	<div class="wrapper">
 		<ul class="awards">
 			{#each awardList as award}
@@ -63,4 +63,4 @@
 	</div>
 </Layout>
 
-<style src="./Award.scss"></style>
+<style src="./Awards.scss"></style>

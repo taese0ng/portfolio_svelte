@@ -1,23 +1,17 @@
 <script lang="ts">
 	import Header from "@components/Mobile/Header";
 	import { location, pop, querystring, replace } from "svelte-spa-router";
-	import { itemList } from "@constants/dock";
+
+	export let title = "";
 
 	const backBtnIcon = "./images/icons/backBtn.png";
 	const homePath = "/";
 	let isApp = false;
-	let title = "";
 
 	const checkLocation = () => {
 		if ($location !== homePath) {
 			isApp = true;
 		}
-
-		itemList.forEach((item) => {
-			if (`/${item.id}` === $location) {
-				title = item.title;
-			}
-		});
 	};
 
 	const handleClickBack = () => {

@@ -36,7 +36,7 @@
 	});
 </script>
 
-<Layout>
+<Layout title="자격증">
 	<div class="wrapper">
 		<ul class="certificates">
 			{#each certificateList as certificate}

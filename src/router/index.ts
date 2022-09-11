@@ -3,10 +3,11 @@ import {
 	MyInfo,
 	History,
 	Setting,
-	Award,
+	Awards,
 	Certificate,
-	Project,
-	Skill,
+	Projects,
+	ProjectDetail,
+	Skills,
 } from "~/pages/Mobile";
 
 export default {
@@ -14,8 +15,9 @@ export default {
 	"/myInfo": MyInfo,
 	"/history": History,
 	"/settings": Setting,
-	"/award": Award,
+	"/award": Awards,
 	"/certificate": Certificate,
-	"/project": Project,
-	"/skill": Skill,
+	"/project": Projects,
+	"/project/:title": ProjectDetail,
+	"/skill": Skills,
 };

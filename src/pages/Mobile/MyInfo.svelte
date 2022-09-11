@@ -7,7 +7,7 @@
 	};
 </script>
 
-<Layout>
+<Layout title="내 정보">
 	<div class="wrapper">
 		<div class="profile__img__wrapper">
 			<img class="profile__img" src="{profileImg}" alt="profileImg" />
