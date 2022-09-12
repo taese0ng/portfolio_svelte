@@ -1,11 +1,11 @@
 <script lang="ts">
+	import { mobileBgImg } from "~/store";
+	import { beforeUpdate } from "svelte";
 	import Dock from "@components/Mobile/Dock";
 	import Layout from "@components/Mobile/Layout";
 	import Background from "@components/Mobile/Background";
-	import { mobileImgs } from "@constants/bgSetting";
 	import { itemList, itemIDs } from "@constants/dock";
 
-	const bgImg = mobileImgs[0].thumb;
 	const dockItemIds = [itemIDs.myInfo, itemIDs.history, itemIDs.settings];
 	const dockItems = [];
 	const backgroundItems = [];
@@ -18,11 +18,19 @@
 		}
 		return backgroundItems.push(item);
 	});
+
+	beforeUpdate(() => {
+		const bg = JSON.parse(localStorage.getItem("mobileBackground")) || null;
+
+		if (bg) {
+			mobileBgImg.set(bg);
+		}
+	});
 </script>
 
 <Layout>
 	<div class="wrapper">
-		<img src="{bgImg}" alt="bgImg" class="bgImg" draggable="false" />
+		<img src="{$mobileBgImg.src}" alt="bgImg" class="bgImg" draggable="false" />
 
 		<Background items="{backgroundItems}" />
 

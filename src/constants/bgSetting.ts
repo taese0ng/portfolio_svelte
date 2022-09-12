@@ -54,7 +54,17 @@ export const bgImgs: Array<BgImg> = [
 export const mobileImgs: Array<BgImg> = [
 	{
 		src: `${bgUrl}/background_ios16.png`,
-		thumb: `${thumbUrl}/thumb_background_ios16.webp`,
+		thumb: `${thumbUrl}/thumb_ios16.webp`,
 		title: "ios16",
+	},
+	{
+		src: `${bgUrl}/background_ios15.png`,
+		thumb: `${thumbUrl}/thumb_ios15.webp`,
+		title: "ios15",
+	},
+	{
+		src: `${bgUrl}/background_ios14.png`,
+		thumb: `${thumbUrl}/thumb_ios14.webp`,
+		title: "ios14",
 	},
 ];

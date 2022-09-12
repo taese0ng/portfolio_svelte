@@ -1,0 +1,41 @@
+ul {
+	margin: 0;
+	padding: 0;
+
+	li {
+		list-style: none;
+	}
+}
+
+.backgrounds {
+	margin: 20px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 10px;
+	&__item {
+		height: 90vw;
+		text-align: center;
+
+		&--thumb {
+			border-radius: 10px;
+			height: 90%;
+			width: 100%;
+			object-fit: cover;
+		}
+
+		&--title {
+			height: 10%;
+			font-size: 1.1em;
+			margin-top: 5px;
+		}
+	}
+}
+
+.selected {
+	outline: 5px solid $blue_20;
+	outline-offset: -5px;
+}
+
+.selectedTitle {
+	font-weight: 600;
+}

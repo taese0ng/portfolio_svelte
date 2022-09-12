@@ -36,7 +36,7 @@
 		const bg = JSON.parse(localStorage.getItem("background")) || null;
 
 		if (bg) {
-			bgImg.set(bg.src);
+			bgImg.set(bg);
 		}
 	};
 
@@ -52,7 +52,7 @@
 
 	<img
 		class="background-img"
-		src="{$bgImg}"
+		src="{$bgImg.src}"
 		alt="background"
 		draggable="false"
 	/>

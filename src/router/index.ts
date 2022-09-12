@@ -9,6 +9,7 @@ import {
 	ProjectDetail,
 	Skills,
 } from "~/pages/Mobile";
+import { Error } from "~/pages";
 
 export default {
 	"/": Home,
@@ -20,4 +21,5 @@ export default {
 	"/projects": Projects,
 	"/projects/:id": ProjectDetail,
 	"/skill": Skills,
+	"*": Error,
 };

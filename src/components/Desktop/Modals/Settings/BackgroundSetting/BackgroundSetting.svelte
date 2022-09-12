@@ -4,7 +4,7 @@
 	import type { BgImg } from "@interfaces/bgSetting";
 
 	const handleSetImg = (bg: BgImg) => {
-		bgImg.set(bg.src);
+		bgImg.set(bg);
 		localStorage.setItem("background", JSON.stringify(bg));
 	};
 </script>
@@ -20,7 +20,7 @@
 				<div class="item" on:click="{() => handleSetImg(img)}">
 					<img
 						class="item__img"
-						class:selected="{$bgImg === img.src}"
+						class:selected="{$bgImg.title === img.title}"
 						src="{img.thumb}"
 						alt="bg"
 					/>
