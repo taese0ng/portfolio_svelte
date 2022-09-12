@@ -6,7 +6,7 @@ export const profileImg = `${iconUrl}/profileImg.jpeg`;
 export const contents: Content[] = [
 	{
 		id: "calendar",
-		text: "1996-08-26",
+		text: "1996",
 		icon: `${iconUrl}/calendar.png`,
 		link: null,
 	},

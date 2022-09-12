@@ -13,7 +13,9 @@
 	beforeUpdate(() => {
 		const bg = JSON.parse(localStorage.getItem("mobileBackground"));
 
-		mobileBgImg.set(bg);
+		if (bg) {
+			mobileBgImg.set(bg);
+		}
 	});
 </script>
 
