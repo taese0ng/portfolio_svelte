@@ -67,4 +67,14 @@ export const mobileImgs: Array<BgImg> = [
 		thumb: `${thumbUrl}/thumb_ios14.webp`,
 		title: "ios14",
 	},
+	{
+		src: `${bgUrl}/background_ios13.png`,
+		thumb: `${thumbUrl}/thumb_ios13.webp`,
+		title: "ios13",
+	},
+	{
+		src: `${bgUrl}/background_ios12.png`,
+		thumb: `${thumbUrl}/thumb_ios12.webp`,
+		title: "ios12",
+	},
 ];
