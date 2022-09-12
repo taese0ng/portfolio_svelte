@@ -34,10 +34,4 @@ export const contents: Content[] = [
 		icon: `${iconUrl}/instagram.png`,
 		link: "https://www.instagram.com/taese0_0ng/",
 	},
-	{
-		id: "notion",
-		text: "notion",
-		icon: `${iconUrl}/notion.png`,
-		link: "https://fern-key-96d.notion.site/0b01f2b4e3884508b588b09ec2ed3554",
-	},
 ];

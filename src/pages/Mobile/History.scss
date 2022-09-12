@@ -30,9 +30,10 @@ ul {
 }
 
 .histories {
+	transform: scaleY(1);
 	overflow: hidden;
 	max-height: 0;
-	transition: max-height 1.5s cubic-bezier(0.1, 1, 0.1, 1);
+	transition: max-height 1s cubic-bezier(0.1, 1, 0.1, 1);
 	display: flex;
 	flex-direction: column;
 	gap: 15px;
@@ -42,6 +43,7 @@ ul {
 		max-height: 100vh;
 		transition: max-height 1s ease;
 	}
+
 	&__item--title {
 		font-size: 1.3em;
 		font-weight: 500;

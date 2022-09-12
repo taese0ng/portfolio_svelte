@@ -28,11 +28,11 @@
 	};
 
 	const getHistoryContents = (year: number) => {
-		const history = historyList.filter(
+		const histories = historyList.filter(
 			(history) => history.from.getFullYear() === year,
 		);
 
-		return history;
+		return histories;
 	};
 
 	const getDate = (history: History) => {
